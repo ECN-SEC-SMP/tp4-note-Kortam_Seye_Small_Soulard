@@ -1,25 +1,40 @@
-/*
-Classe Polygone
-La classe Polygone représente un polygone défini par une liste de sommets de type Point2D.
+#ifndef POLYGONE_H
+#define POLYGONE_H
+
+#include <vector>
+#include "point2d.h"
+
+template <typename T>
+class Polygone {
+private:
+    std::vector<Point2D<T>> sommets;
+
+public:
+
+    Polygone() = default;
+
+    Polygone(const std::vector<Point2D<T>>& listeSommets) : sommets(listeSommets) {}
+
+    Polygone(const Polygone<T>& poly) : sommets(poly.sommets) {}
 
 
-Attribut privé :
+    std::vector<Point2D<T>> getSommets() const {
+        return sommets;
+    }
 
-sommets : Vector<Point2D<T>> — La liste des sommets qui composent le polygone.
+    void setSommets(const std::vector<Point2D<T>>& listeSommets) {
+        sommets = listeSommets;
+    }
 
+    void addPoint(const Point2D<T>& point) {
+        sommets.push_back(point);
+    }
 
-Constructeurs :
+    void translate(T dx, T dy) {
+        for (auto& sommet : sommets) {
+            sommet.translate(dx, dy);
+        }
+    }
+};
 
-Polygone() : Constructeur par défaut.
-Polygone(Vector<Point2D<T>> listeSommets) : Constructeur prenant une liste de sommets.
-Polygone(Polygone<T> poly) : Constructeur de recopie prenant un autre polygone comme paramètre.
-
-
-Méthodes publiques :
-
-getSommets() : Vector<Point2D<T>> — Retourne la liste des sommets.
-setSommets(Vector<Point2D<T>> listeSommets) : void — Modifie la liste des sommets.
-addPoint(Point2D<T> point) : void — Ajoute un sommet au polygone.
-translate(T dx, T dy) : void — Effectue une translation sur tous les sommets du polygone.
-
-*/
+#endif // POLYGONE_H
