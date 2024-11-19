@@ -8,7 +8,6 @@ $(TARGET): *.cpp
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 clean:
-	rm -f $(TARGET)
+	rm -f $(TARGET)  
 
 .PHONY: clean
-
