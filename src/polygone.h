@@ -3,8 +3,10 @@
 
 #include <vector>
 #include "point2d.h"
+using namespace std;
 
 template <typename T>
+
 class Polygone {
 private:
     std::vector<Point2D<T>> sommets;
@@ -13,7 +15,7 @@ public:
 
     Polygone() = default;
 
-    Polygone(const std::vector<Point2D<T>>& listeSommets) : sommets(listeSommets) {}
+    Polygone(const vector<Point2D<T>>& listeSommets){}
 
     Polygone(const Polygone<T>& poly) : sommets(poly.sommets) {}
 
@@ -22,7 +24,7 @@ public:
         return sommets;
     }
 
-    void setSommets(const std::vector<Point2D<T>>& listeSommets) {
+    void setSommets(const vector<Point2D<T>>& listeSommets) {
         sommets = listeSommets;
     }
 

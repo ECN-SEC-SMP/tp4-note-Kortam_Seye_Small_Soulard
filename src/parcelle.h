@@ -8,6 +8,7 @@ using namespace std;
 
 
 class Parcelle {
+    
 private:
     string type;
     int numero;
@@ -19,20 +20,20 @@ private:
     void calculerSurface();
 
 public:
-
     Parcelle(int num, string prop, Polygone<int> forme);
     Parcelle(const Parcelle& parc);
 
     int getNumero() const;
-    string getPropriétaire() const;
+    string getProprietaire() const;
     float getSurface() const;
     Polygone<int> getForme() const;
     string getType() const;
 
     void setNumero(int n);
-    void setPropriétaire(string prop);
+    void setProprietaire(string prop);
     void setForme(Polygone<int> forme);
     virtual void setType(string type) = 0;
+
 
     class SurfaceException : public exception {
     public:
