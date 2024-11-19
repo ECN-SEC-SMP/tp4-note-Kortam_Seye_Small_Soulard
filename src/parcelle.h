@@ -4,11 +4,14 @@
 #include <string>
 #include "polygone.h"
 
+using namespace std; 
+
+
 class Parcelle {
 private:
-    std::string type;
+    string type;
     int numero;
-    std::string propriétaire;
+    string proprietaire;
     float surface;
     Polygone<int> forme;
     int pConstructible;
@@ -16,21 +19,22 @@ private:
     void calculerSurface();
 
 public:
-    Parcelle(int num, std::string prop, Polygone<int> forme);
+
+    Parcelle(int num, string prop, Polygone<int> forme);
     Parcelle(const Parcelle& parc);
 
     int getNumero() const;
-    std::string getPropriétaire() const;
+    string getPropriétaire() const;
     float getSurface() const;
     Polygone<int> getForme() const;
-    std::string getType() const;
+    string getType() const;
 
     void setNumero(int n);
-    void setPropriétaire(std::string prop);
+    void setPropriétaire(string prop);
     void setForme(Polygone<int> forme);
-    virtual void setType(std::string type) = 0;
+    virtual void setType(string type) = 0;
 
-    class SurfaceException : public std::exception {
+    class SurfaceException : public exception {
     public:
         const char* what() const noexcept override {
             return "Surface cannot be negative or zero.";
