@@ -1,25 +1,39 @@
 #ifndef POINT2D_H
 #define POINT2D_H
 
+#include <iostream>
+
 template <typename T>
 class Point2D {
 private:
-    T x; 
-    T y; 
+    T x; // Coordonnée X
+    T y; // Coordonnée Y
 
 public:
+    // Constructeurs
+    Point2D(T x, T y) : x(x), y(y) {}       // Constructeur paramétré
+    Point2D() : x(0), y(0) {}               // Constructeur par défaut
+    Point2D(const Point2D<T>& p) : x(p.x), y(p.y) {} // Constructeur par recopie
 
-    Point2D(T x, T y);
-    Point2D();
-    Point2D(const Point2D<T>& p);
+    // Accesseurs
+    T getX() const { return x; }
+    T getY() const { return y; }
 
-    T getX() const;
-    T getY() const;
+    // Mutateurs
+    void setX(T x) { this->x = x; }
+    void setY(T y) { this->y = y; }
 
-    void setX(T x);
-    void setY(T y);
+    // Translation du point
+    void translate(T dx, T dy) {
+        x += dx;
+        y += dy;
+    }
 
-    void translate(T dx, T dy);
+    // Surcharge de l'opérateur <<
+    friend std::ostream& operator<<(std::ostream& os, const Point2D<T>& point) {
+        os << "(" << point.x << ", " << point.y << ")";
+        return os;
+    }
 };
 
-#endif
+#endif // POINT2D_H
