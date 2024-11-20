@@ -35,6 +35,12 @@ public:
             sommet.translate(dx, dy);
         }
     }
+    friend std::ostream& operator<<(std::ostream& os, const Polygone<T>& poly) {
+        for (const auto& sommet : poly.sommets) {
+            os << sommet << " ";
+        }
+        return os;
+    }
 };
 
 #endif // POLYGONE_H

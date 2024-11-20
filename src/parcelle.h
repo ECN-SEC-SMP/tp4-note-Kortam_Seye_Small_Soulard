@@ -6,9 +6,10 @@
 
 using namespace std; 
 
-
 class Parcelle {
+
 private:
+
     string type;
     int numero;
     string proprietaire;
@@ -21,7 +22,7 @@ private:
 public:
 
     Parcelle(int num, string prop, Polygone<int> forme);
-    Parcelle(const Parcelle& parc);
+    //Parcelle(const Parcelle& parc);
 
     int getNumero() const;
     string getPropriétaire() const;
