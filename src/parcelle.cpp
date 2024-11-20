@@ -5,9 +5,6 @@ using namespace std;
 Parcelle::Parcelle(int num, string prop, Polygone<int> forme)
         :numero(num), proprietaire(prop), forme(forme){}
         
-Parcelle::Parcelle(const Parcelle& parc){
-    
-}
 
     
 int Parcelle::getNumero() const{

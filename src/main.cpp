@@ -2,7 +2,7 @@
 #include "point2D.h"
 #include "parcelle.h"
 #include "polygone.h"
-
+#include "ZN.h"
 using namespace std;
 
 int main() {
@@ -75,6 +75,27 @@ int main() {
         cout << "(" << point.getX() << ", " << point.getY() << ")" << endl;
     }*/
 
+   // on peut pas faire de parcelle car virtuelle pure 
 
+    /*   
+    // Create a parcel with the polygon and set attributes
+    Parcelle* parcelle = new Parcelle(1, "John Doe", polygone);
+
+    // Display the parcel details
+    cout << "Parcelle Details:" << endl;
+    cout << *parcelle << endl;
+
+    // Clean up
+    delete parcelle;
+    */
+    // Create a ZN parcel with the polygon and set attributes
+    ZN* znParcel = new ZN(1, "John Doe", polygone);
+
+    // Display the ZN parcel details
+    cout << "ZN Parcel Details:" << endl;
+    cout << *znParcel << endl;
+
+    // Clean up
+    //delete znParcel;
     return 0;
 }

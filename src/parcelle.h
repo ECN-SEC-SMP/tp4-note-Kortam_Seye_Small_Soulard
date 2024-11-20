@@ -7,9 +7,9 @@
 using namespace std; 
 
 class Parcelle {
-    
-private:
 
+private:
+protected:
     string type;
     int numero;
     string proprietaire;
@@ -41,6 +41,15 @@ public:
             return "Surface cannot be negative or zero.";
         }
     };
+    friend ostream& operator<<(ostream& os, const Parcelle& parcelle) {
+        os << "Numero: " << parcelle.numero << endl;
+        os << "Proprietaire: " << parcelle.proprietaire << endl;
+        os << "Surface: " << parcelle.surface << endl;
+        os << "Forme: " << parcelle.forme << endl;
+        os << "Type: " << parcelle.type << endl;
+        return os;
+    }
+
 };
 
 #endif // PARCELLE_H
