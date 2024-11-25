@@ -11,22 +11,25 @@ using namespace std;
         : Parcelle(num, prop, forme), surfaceConstruite(surfaceConstruite) {}
     
     
-    float getSurfaceConstruite() {        
+    float Z_Constructible::getSurfaceConstruite() {        
         return surfaceConstruite ; 
         
     }
  
-    void setSurfaceConstruite(float surface){
-        
+    void Z_Constructible::setSurfaceConstruite(float surface){
+        this->surfaceConstruite= surface; 
     }
 
-    float surfaceConstructible() {
-        
-    }
-
-    void setType(string type) {
+    float Z_Constructible::surfaceConstructible() {}
+    
+    void Z_Constructible::set_type_culture(string culture)  {
+        this->type_culture = culture; 
         
     }
     
-    string type_culture() {}
+    string Z_Constructible::get_type_culture() const{
+        return type_culture; 
+    } 
+
+
     

@@ -8,6 +8,7 @@ class Z_Constructible : public Parcelle {
 protected:
 
     float surfaceConstruite;
+    string type_culture;
     
 
 public:
@@ -19,11 +20,12 @@ public:
     
     void setSurfaceConstruite(float surface);
 
-    float surfaceConstructible() const;
-
-    void setType(string type) override;
+    virtual float surfaceConstructible()=0;
     
-    virtual string type_culture() = 0; 
+    void set_type_culture(string culture ) ; 
+    
+    string get_type_culture () const; 
+    
      
 };
 
