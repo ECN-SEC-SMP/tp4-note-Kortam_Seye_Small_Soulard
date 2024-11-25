@@ -2,7 +2,7 @@
 #include "point2D.h"
 #include "parcelle.h"
 #include "polygone.h"
-#include "ZN.h"
+#include "ZoneNaturelle.h"
 using namespace std;
 
 int main() {
