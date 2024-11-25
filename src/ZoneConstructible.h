@@ -12,6 +12,8 @@ protected:
     
 
 public:
+    Z_Constructible(int num, string prop, Polygone<int> forme);
+
     Z_Constructible(int num, string prop, Polygone<int> forme, float surfaceConstruite);
     
     string gettype() const; // le type de zone, à voir s'il il faut le redefinir 
@@ -22,9 +24,7 @@ public:
 
     virtual float surfaceConstructible()=0;
     
-    void set_type_culture(string culture ) ; 
-    
-    string get_type_culture () const; 
+
     
      
 };

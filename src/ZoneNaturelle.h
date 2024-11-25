@@ -1,7 +1,10 @@
 #ifndef ZN_H
 #define ZN_H
 
+#include <iostream>
+
 #include "parcelle.h"
+
 
 class ZN : public Parcelle {
 public:

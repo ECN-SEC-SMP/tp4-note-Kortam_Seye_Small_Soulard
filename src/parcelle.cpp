@@ -22,6 +22,7 @@ float Parcelle::getSurface() const{
 Polygone<int> Parcelle::getForme() const{
     return forme;
 }
+
 string Parcelle::getType() const{
     return type;
 }
