@@ -90,7 +90,7 @@ int main() {
     // Clean up
     //delete znParcel;
     */
-
+/*
  // Création d'un point 2D
     Point2D<int> p1(0, 0);
     std::cout << "Point1 : " << p1 << std::endl;
@@ -109,5 +109,85 @@ int main() {
     // Translation du polygone
     poly.translate(2, 3);
     std::cout << "Après translation : " << poly << std::endl;
+
+*/
+
+ // Test 1: Polygone valide dans le sens trigonométrique
+    try {
+        std::cout << "Test 1: Polygone valide dans le sens trigonométrique" << std::endl;
+        std::vector<Point2D<int>> sommets = {{0, 0}, {4, 0}, {2, 3}};
+        Polygone<int> poly(sommets);
+        
+        // Vérification du sens trigonométrique
+        poly.checkCounterClockwise();  // Devrait passer sans exception
+        std::cout << "Le polygone est dans le sens trigonométrique." << std::endl;
+        
+        // Vérification de l'auto-intersection
+        poly.checkSelfIntersection();  // Devrait passer sans exception
+        std::cout << "Le polygone n'est pas croisé." << std::endl;
+
+        // Affichage du polygone
+        std::cout << poly << std::endl;
+    } catch (const std::exception& e) {
+        std::cerr << e.what() << std::endl;
+    }
+
+    // Test 2: Polygone croisé
+    try {
+        std::cout << "\nTest 2: Polygone croisé" << std::endl;
+        std::vector<Point2D<int>> sommetsCroises = {{0, 0}, {4, 0}, {0, 4}, {4, 4}};
+        Polygone<int> polyCroise(sommetsCroises);
+        
+        // Vérification de l'auto-intersection
+        polyCroise.checkSelfIntersection();  // Devrait lever une exception
+    } catch (const std::exception& e) {
+        std::cerr << "Erreur : " << e.what() << std::endl;
+    }
+
+    // Test 3: Ajouter un sommet au polygone
+    try {
+        std::cout << "\nTest 3: Ajouter un sommet au polygone" << std::endl;
+        Polygone<int> poly2;
+        poly2.addPoint(Point2D<int>(0, 0));
+        poly2.addPoint(Point2D<int>(4, 0));
+        poly2.addPoint(Point2D<int>(2, 3));
+
+        std::cout << "Polygone initial : " << poly2 << std::endl;
+
+        // Ajout d'un sommet supplémentaire
+        poly2.addPoint(Point2D<int>(3, 4));
+        std::cout << "Après ajout d'un sommet : " << poly2 << std::endl;
+
+        // Recalcul du sens trigonométrique
+        if (poly2.isCounterClockwise()) {
+            std::cout << "Le polygone est dans le sens trigonométrique." << std::endl;
+        } else {
+            std::cout << "Le polygone n'est pas dans le sens trigonométrique." << std::endl;
+        }
+
+        // Vérification de l'auto-intersection
+        poly2.checkSelfIntersection();  // Devrait passer sans exception
+        std::cout << "Le polygone n'est pas croisé." << std::endl;
+    } catch (const std::exception& e) {
+        std::cerr << e.what() << std::endl;
+}
+
+
+    // Test 4: Translation du polygone
+    try {
+        std::cout << "\nTest 4: Translation du polygone" << std::endl;
+        Polygone<int> poly3;
+        poly3.addPoint(Point2D<int>(0, 0));
+        poly3.addPoint(Point2D<int>(4, 0));
+        poly3.addPoint(Point2D<int>(2, 3));
+
+        std::cout << "Polygone avant translation : " << poly3 << std::endl;
+        
+        // Translation du polygone
+        poly3.translate(2, 3);
+        std::cout << "Après translation de (2, 3) : " << poly3 << std::endl;
+    } catch (const std::exception& e) {
+        std::cerr << e.what() << std::endl;
+    }
     return 0;
 }
