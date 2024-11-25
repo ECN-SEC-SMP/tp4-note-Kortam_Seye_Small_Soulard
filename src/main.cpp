@@ -2,7 +2,7 @@
 #include "point2D.h"
 #include "parcelle.h"
 #include "polygone.h"
-#include "ZN.h"
+#include "ZoneUrbaine.h"
 using namespace std;
 
 int main() {
@@ -42,21 +42,23 @@ int main() {
     cout << "PointFloat: (" << pointFloat.getX() << ", " << pointFloat.getY() << ")" << endl;
     cout << "PointDouble: (" << pointDouble.getX() << ", " << pointDouble.getY() << ")" << endl;
     */
-
+    /*
     // Create points for the polygon
     Point2D<int> p1(0, 0);
     Point2D<int> p2(1, 0);
     Point2D<int> p3(1, 1);
     Point2D<int> p4(0, 1);
     std::cout << endl << "Point1 : " << p1 << endl;
+    */
 
-    std::vector<Point2D<int>> points = {p1, p2, p3, p4};
+    /*std::vector<Point2D<int>> points = {p1, p2, p3, p4};
     Polygone<int> polygone(points);
 
     std::cout << endl << "Polygone : " << polygone << endl;
     // Translate polygon
     polygone.translate(2, 3);
     std::cout << "Polygone translate : " << polygone << endl << endl;
+    */
 
     // Display translated polygon points
     /*cout << "Translated Polygon Points:" << endl;
@@ -77,8 +79,8 @@ int main() {
     // Clean up
     delete parcelle;
     */
+    /*
     // Create a ZN parcel with the polygon and set attributes
-    
     ZN* znParcel = new ZN(67, "Liam Smelly", polygone);
 
     // Display the ZN parcel details
@@ -87,5 +89,25 @@ int main() {
 
     // Clean up
     //delete znParcel;
+    */
+
+ // Création d'un point 2D
+    Point2D<int> p1(0, 0);
+    std::cout << "Point1 : " << p1 << std::endl;
+
+    // Création d'un polygone avec une liste initiale de sommets
+    std::vector<Point2D<int>> sommets = {p1, Point2D<int>(1, 0), Point2D<int>(0, 1)};
+    Polygone<int> poly(sommets);
+
+    std::cout << "Polygone initial : " << poly << std::endl;
+
+    // Ajout d'un nouveau sommet
+    Point2D<int> p2(1, 1);
+    poly.addPoint(p2);
+    std::cout << "Après ajout d'un sommet : " << poly << std::endl;
+
+    // Translation du polygone
+    poly.translate(2, 3);
+    std::cout << "Après translation : " << poly << std::endl;
     return 0;
 }

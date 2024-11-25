@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+// Classe template pour représenter un point 2D
 template <typename T>
 class Point2D {
 private:
@@ -29,7 +30,7 @@ public:
         y += dy;
     }
 
-    // Surcharge de l'opérateur <<
+    // Surcharge de l'opérateur << pour afficher les coordonnées
     friend std::ostream& operator<<(std::ostream& os, const Point2D<T>& point) {
         os << "(" << point.x << ", " << point.y << ")";
         return os;
