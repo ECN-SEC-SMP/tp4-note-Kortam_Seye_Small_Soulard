@@ -47,7 +47,7 @@ public:
         os << "Type: " << parcelle.type << endl;
         os << "Polygone: " << parcelle.forme << endl;
         os << "Proprietaire: " << parcelle.proprietaire << endl;
-        os << "Surface: " << parcelle.surface << endl;
+        os << "Surface: " << parcelle.getSurface() << endl;
         return os;
     }
 
