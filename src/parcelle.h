@@ -2,6 +2,7 @@
 #define PARCELLE_H
 
 #include <string>
+#include "point2D.h"
 #include "polygone.h"
 
 using namespace std; 
@@ -43,10 +44,10 @@ public:
     };
     friend ostream& operator<<(ostream& os, const Parcelle& parcelle) {
         os << "Numero: " << parcelle.numero << endl;
+        os << "Type: " << parcelle.type << endl;
+        os << "Polygone: " << parcelle.forme << endl;
         os << "Proprietaire: " << parcelle.proprietaire << endl;
         os << "Surface: " << parcelle.surface << endl;
-        os << "Forme: " << parcelle.forme << endl;
-        os << "Type: " << parcelle.type << endl;
         return os;
     }
 

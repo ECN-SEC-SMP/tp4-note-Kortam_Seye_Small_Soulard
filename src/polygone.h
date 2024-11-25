@@ -2,7 +2,9 @@
 #define POLYGONE_H
 
 #include <vector>
+#include <iostream>
 #include "point2d.h"
+
 using namespace std;
 
 template <typename T>
@@ -37,6 +39,8 @@ public:
             sommet.translate(dx, dy);
         }
     }
+
+    
     friend std::ostream& operator<<(std::ostream& os, const Polygone<T>& poly) {
         for (const auto& sommet : poly.sommets) {
             os << sommet << " ";

@@ -48,26 +48,15 @@ int main() {
     Point2D<int> p2(1, 0);
     Point2D<int> p3(1, 1);
     Point2D<int> p4(0, 1);
-    //print les points 
-    cout << "Point 1: " << p1 << endl;
-    cout << "Point 2: " << p2 << endl;
-    cout << "Point 3: " << p3 << endl;
-    cout << "Point 4: " << p4 << endl;
-    
-    // Create a polygon with the points
-    //std::
-    vector<Point2D<int>> points = {p1, p2, p3, p4};
+    std::cout << endl << "Point1 : " << p1 << endl;
+
+    std::vector<Point2D<int>> points = {p1, p2, p3, p4};
     Polygone<int> polygone(points);
 
-    // Display initial polygon points
-    /*cout << "Initial Polygon Points:" << endl;
-    for (const auto& point : polygone.getSommets()) {
-        cout << "(" << point.getX() << ", " << point.getY() << ")" << endl;
-    }*/
-    cout << "Polygone : " << polygone << endl;
+    std::cout << endl << "Polygone : " << polygone << endl;
     // Translate polygon
     polygone.translate(2, 3);
-    cout << "Polygone translate : " << polygone << endl;
+    std::cout << "Polygone translate : " << polygone << endl << endl;
 
     // Display translated polygon points
     /*cout << "Translated Polygon Points:" << endl;
@@ -89,7 +78,8 @@ int main() {
     delete parcelle;
     */
     // Create a ZN parcel with the polygon and set attributes
-    ZN* znParcel = new ZN(1, "John Doe", polygone);
+    
+    ZN* znParcel = new ZN(67, "Liam Smelly", polygone);
 
     // Display the ZN parcel details
     cout << "ZN Parcel Details:" << endl;
