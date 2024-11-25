@@ -10,6 +10,7 @@ ZU::ZU(int num, string prop, Polygone<int> forme, float surfaceConstruite)
 float ZU::surfaceConstructible() {
     
     float surface_restante = Parcelle::surface - surfaceConstruite; // a definir la surface
+    return surface_restante; 
   
 }
 

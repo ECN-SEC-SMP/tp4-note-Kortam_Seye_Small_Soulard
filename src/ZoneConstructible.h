@@ -8,7 +8,6 @@ class Z_Constructible : public Parcelle {
 protected:
 
     float surfaceConstruite;
-    string type_culture;
     
 
 public:

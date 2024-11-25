@@ -20,11 +20,10 @@ float Z_Constructible::getSurfaceConstruite()
         
     }
  
-    void Z_Constructible::setSurfaceConstruite(float surface){
-        this->surfaceConstruite= surface; 
-    }
+void Z_Constructible::setSurfaceConstruite(float surface){
+    this->surfaceConstruite= surface; 
+}
 
-    float Z_Constructible::surfaceConstructible() {}
     
 
 

@@ -8,7 +8,7 @@
 #include "ZoneNaturelle.h"
 
 
-class ZA: public ZN , public Z_Constructible
+class ZA: virtual public ZN , virtual public Z_Constructible
 {
 private:
     string type_culture; 
