@@ -3,6 +3,5 @@
 #include "polygone.h"
 
 #include <vector>
- 
 using namespace std; 
 

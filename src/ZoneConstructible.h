@@ -5,15 +5,17 @@
 
 class Z_Constructible : public Parcelle {
     
-private:
+protected:
+
     float surfaceConstruite;
+    
 
 public:
     Z_Constructible(int num, string prop, Polygone<int> forme, float surfaceConstruite);
     
-    string gettype(); // le type de zone 
+    string gettype() const; // le type de zone, à voir s'il il faut le redefinir 
 
-    float getSurfaceConstruite() const;
+    float getSurfaceConstruite() ;
     
     void setSurfaceConstruite(float surface);
 
@@ -22,8 +24,7 @@ public:
     void setType(string type) override;
     
     virtual string type_culture() = 0; 
-    
-    
+     
 };
 
 #endif // ZC_H
