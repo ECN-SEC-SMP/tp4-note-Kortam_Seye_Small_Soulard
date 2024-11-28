@@ -21,6 +21,7 @@ protected:
     void calculerSurface();
 
 public:
+    Parcelle();
     Parcelle(int num, string prop, Polygone<int> forme);
     //Parcelle(const Parcelle& parc);
 
@@ -45,7 +46,7 @@ public:
     friend ostream& operator<<(ostream& os, const Parcelle& parcelle) {
         os << "Numero: " << parcelle.numero << endl;
         os << "Type: " << parcelle.type << endl;
-        os << "Polygone: " << parcelle.forme << endl;
+        os << parcelle.forme << endl;
         os << "Proprietaire: " << parcelle.proprietaire << endl;
         os << "Surface: " << parcelle.getSurface() << endl;
         return os;

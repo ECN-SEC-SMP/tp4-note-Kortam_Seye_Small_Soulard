@@ -6,7 +6,7 @@
 #include "parcelle.h"
 
 
-class ZN : public Parcelle {
+class ZN : virtual public Parcelle {
 public:
     ZN(int num, string prop, Polygone<int> forme) : Parcelle(num, prop, forme) {
         setType("ZN");

@@ -3,7 +3,7 @@
 
 #include "parcelle.h"
 
-class Z_Constructible : public Parcelle {
+class ZoneConstructible : virtual public Parcelle {
     
 protected:
 
@@ -11,19 +11,15 @@ protected:
     
 
 public:
-    Z_Constructible(int num, string prop, Polygone<int> forme);
-
-    Z_Constructible(int num, string prop, Polygone<int> forme, float surfaceConstruite);
+    ZoneConstructible();
+    ZoneConstructible(int num, string prop, Polygone<int> forme);
+    ZoneConstructible(int num, string prop, Polygone<int> forme, float surfaceConstruite);
     
-    string gettype() const; // le type de zone, à voir s'il il faut le redefinir 
-
+    std::string gettype() const; // le type de zone, à voir s'il il faut le redefinir 
     float getSurfaceConstruite() ;
-    
     void setSurfaceConstruite(float surface);
-
     virtual float surfaceConstructible()=0;
-    
-
+    void setType(string type);
     
      
 };

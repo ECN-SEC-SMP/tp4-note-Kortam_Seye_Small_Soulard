@@ -6,7 +6,12 @@
 #include "ZoneNaturelle.h"
 #include "ZoneAgricole.h"
 
-ZA::ZA(int num, string prop, Polygone<int> forme, string culture): ZN(num, prop, forme), type_culture(culture){}
+
+ZA::ZA(int num, std::string prop, Polygone<int> forme, std::string culture)
+    : Parcelle(num, prop, forme), ZN(num, prop, forme), ZoneConstructible(num, prop, forme){
+    setType("ZA");  // Initialise le type comme "ZA"
+    set_type_culture(culture);
+}
 
 
 void ZA::set_type_culture(string culture)  {
@@ -14,14 +19,19 @@ void ZA::set_type_culture(string culture)  {
 }
 
 string ZA::get_type_culture() const{
-    return type_culture; 
+    return this->type_culture; 
 } 
 
 float ZA:: surfaceConstructible(){
     float surfaceConstructible =0; 
-    if ((surfaceConstruite < (Z_Constructible::surface*0.1)) & (surfaceConstruite < 200)){
-        surfaceConstructible= Z_Constructible::surface - surfaceConstruite ; 
+    if ((surfaceConstruite < (ZoneConstructible::surface*0.1)) & (surfaceConstruite < 200)){
+        surfaceConstructible= ZoneConstructible::surface - surfaceConstruite ; 
         return surfaceConstructible;
     }   
     return surfaceConstructible; 
 }
+
+void ZA::setType(std::string type) {
+    this->type = type;
+}
+
