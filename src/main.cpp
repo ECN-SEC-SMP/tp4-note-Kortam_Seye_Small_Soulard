@@ -42,10 +42,10 @@ int main() {
     Carte carte;  // Créer un objet Carte
     try {
         // Essayez de charger les données du fichier
-       carte.lireDepuisFichier("./Parcelle.txt"); 
-;
+       carte.lireDepuisFichier("Parcelles.txt"); 
+
         // Afficher ou utiliser la carte chargée
-        carte.afficherCarte();  // Exemple d'affichage si vous avez une méthode pour afficher les données
+        carte.afficherCarte();  // affichage
         
     } catch (const std::exception& e) {
         // En cas d'erreur lors de l'ouverture du fichier
