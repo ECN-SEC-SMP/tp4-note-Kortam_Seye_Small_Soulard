@@ -43,7 +43,7 @@ public:
     }
 
     // Vérifier le sens trigonométrique du polygone
-    bool isCounterClockwise() const {
+    bool estSensTrigo() const {
         if (sommets.size() < 3) {
             throw std::invalid_argument("Un polygone doit avoir au moins 3 sommets.");
         }
@@ -71,10 +71,10 @@ public:
             T y2 = sommets[nextNext].getY() - sommets[current].getY();
 
             // Calcul du produit scalaire
-            T crossProduct = x1 * y2 - y1 * x2;
+            T ProduitScal = x1 * y2 - y1 * x2;
 
             // Si le produit est négatif, les points ne sont pas dans le sens trigonométrique
-            if (crossProduct < 0) {
+            if (ProduitScal < 0) {
                 return false;
             }
         }
@@ -82,30 +82,30 @@ public:
     }
 
     // Lever une exception si le polygone n'est pas dans le sens trigonométrique
-    void checkCounterClockwise() const {
-        if (!isCounterClockwise()) {
+    void CheckSensTrigo() const {
+        if (!estSensTrigo()) {
             throw std::logic_error("Le polygone n'est pas dans le sens trigonométrique.");
         }
     }
 
     // Vérifier si deux segments s'intersectent
     bool segmentsIntersect(const Point2D<T>& A, const Point2D<T>& B, const Point2D<T>& C, const Point2D<T>& D) const {
-        auto crossProduct = [](const Point2D<T>& P, const Point2D<T>& Q, const Point2D<T>& R) {
+        auto ProduitScal = [](const Point2D<T>& P, const Point2D<T>& Q, const Point2D<T>& R) {
             return (Q.getX() - P.getX()) * (R.getY() - P.getY()) -
                    (Q.getY() - P.getY()) * (R.getX() - P.getX());
         };
 
-        T d1 = crossProduct(A, B, C);
-        T d2 = crossProduct(A, B, D);
-        T d3 = crossProduct(C, D, A);
-        T d4 = crossProduct(C, D, B);
+        T d1 = ProduitScal(A, B, C);
+        T d2 = ProduitScal(A, B, D);
+        T d3 = ProduitScal(C, D, A);
+        T d4 = ProduitScal(C, D, B);
 
         // Vérifier les changements de signe
         return (d1 * d2 < 0) && (d3 * d4 < 0);
     }
 
     // Vérifier si le polygone est croisé
-    bool isSelfIntersecting() const {
+    bool estCroise() const {
         size_t n = sommets.size();
         if (n < 4) return false; // Un polygone avec moins de 4 côtés ne peut pas être croisé
 
@@ -124,8 +124,8 @@ public:
     }
 
     // Lever une exception si le polygone est croisé
-    void checkSelfIntersection() const {
-        if (isSelfIntersecting()) {
+    void CheckCroise() const {
+        if (estCroise()) {
             throw std::logic_error("Le polygone est croisé.");
         }
     }

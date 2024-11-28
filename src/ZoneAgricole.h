@@ -15,20 +15,22 @@ private:
     std::string type_culture; 
 public:
     
-
+    //Constructeur
     ZA(int num, std::string prop, Polygone<int> forme, std::string culture);
 
+    //Redéfinition de setType
+    void setType(std::string type) override; 
+  
+    //Setter du type de culture
+    void set_type_culture(string culture ) ;
 
-    //ZA();
-    //ZA(int num, string prop, Polygone<int> forme, string culture);
+    //Getter du type de culture 
+    string get_type_culture () const;
 
-    void setType(std::string type) override; // Redéfinition de setType
-    //virtual float surfaceConstructible() override = 0;
-
-    void set_type_culture(string culture ) ; 
-    string get_type_culture () const; 
+    //Méthode pour obtenir la surface constructible 
     float surfaceConstructible(); 
 
+    //Surcharge de l'opérateur << pour afficher la zone
     friend ostream& operator<<(std::ostream& os, const ZA& za) {
     os << "Numero: " << za.getNumero() << "\n"
        << "Type: " << za.getType() << "\n"
@@ -39,9 +41,6 @@ public:
        
     return os;
     }
-    
 };
-
-
 
 #endif

@@ -31,7 +31,11 @@ int main() {
     ZoneUrbaine* zuParcel = new ZoneUrbaine(45, "Fatou", poly4, 0.11,0.44);
     cout << *zuParcel << endl;
 
+    // Suppression des objets dynamiquement alloués pour éviter les fuites de mémoire
+    delete znParcel;
+    delete zaParcel;
+    delete zauParcel;
+    delete zuParcel;
 
     return 0;
-
 }

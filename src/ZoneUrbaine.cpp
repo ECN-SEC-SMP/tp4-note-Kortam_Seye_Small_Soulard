@@ -32,16 +32,6 @@ float ZoneUrbaine::surfaceConstructible() {
 }
 
 
-// Méthode pour afficher les informations de la Zone Urbaine
-void ZoneUrbaine::afficher() const {
-    std::cout << "Zone Urbaine :\n";
-    std::cout << "Numero : " << getNumero() << "\n";
-    std::cout << "Proprietaire : " << getProprietaire() << "\n";
-    std::cout << "Surface : " << getSurface() << " m2\n";
-    std::cout << "Surface construite : " << getSurfaceConstruite() << " m2\n";
-    std::cout << "Surface constructible restante : " << surfaceRestante << " m2\n";
-}
-
 // Getter pour la surface restante
 float ZoneUrbaine::getSurfaceRestante() const {
     return surfaceRestante;
@@ -52,6 +42,7 @@ void ZoneUrbaine::setSurfaceRestante(float surface) {
     surfaceRestante = surface;
 }
 
+//Getter pour la surface construite
 float ZoneUrbaine::getSurfaceConstruite() const {  // Ajoutez const ici également
     return surfaceConstruite;
 }

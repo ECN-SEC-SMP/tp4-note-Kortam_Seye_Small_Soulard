@@ -52,6 +52,9 @@ public:
         return os;
     }
 
+    // Ajout d'un destructeur virtuel pour permettre une suppression correcte des objets dérivés
+    virtual ~Parcelle() {}
+
 };
 
 #endif // PARCELLE_H

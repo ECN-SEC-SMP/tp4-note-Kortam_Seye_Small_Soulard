@@ -15,14 +15,12 @@ public:
     // Redéfinition de la méthode pour calculer la surface constructible restante
     float surfaceConstructible() override;
 
-    // Surcharge de la méthode pour afficher les informations
-    void afficher() const;
-
     // Getter et Setter
     float getSurfaceRestante() const;
     void setSurfaceRestante(float surface);
     virtual float getSurfaceConstruite() const;
 
+    //Surcharge opérateur >> pour afficher 
     friend std::ostream& operator<<(std::ostream& os, const ZoneUrbaine& zu) {
         os << "Numero: " << zu.getNumero() << "\n"
            << "Type: " << zu.getType() << "\n"

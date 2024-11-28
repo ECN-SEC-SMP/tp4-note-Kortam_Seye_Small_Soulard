@@ -7,18 +7,30 @@ class ZoneConstructible : virtual public Parcelle {
     
 protected:
 
+    //Variable réel pour la surface construite
     float surfaceConstruite;
     
 
 public:
+
+    //Constructeurs
     ZoneConstructible();
     ZoneConstructible(int num, string prop, Polygone<int> forme);
     ZoneConstructible(int num, string prop, Polygone<int> forme, float surfaceConstruite);
-    
-    std::string gettype() const; // le type de zone, à voir s'il il faut le redefinir 
+
+    //le type de zone
+    std::string gettype() const;
+
+    //Getter pour la surface construite
     float getSurfaceConstruite() ;
+
+    //Setter pour la surface construite
     void setSurfaceConstruite(float surface);
+
+    //Méthode virtuelle purte pour calculer la surface constructible restante
     virtual float surfaceConstructible()=0;
+
+    //Setter pour le type de zone
     void setType(string type);
     
      
