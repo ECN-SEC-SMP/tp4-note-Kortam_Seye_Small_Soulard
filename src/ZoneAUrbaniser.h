@@ -27,24 +27,24 @@ public:
 #include "parcelle.h"
 #include "ZoneConstructible.h"
 
+using namespace std;
 class ZAU : public Z_Constructible {
 private:
     float surface_constructible;
 
 public:
     ZAU(int num, std::string prop, Polygone<int> forme, float surface) ;
-        //: Z_Constructible(num, prop, forme), surface_constructible(surface) {}
-
     float getSurfaceConstructible() const;
     void setSurfaceConstructible(float surface);
-    float surfaceConstructible(); 
+    float surfaceConstructible();
     friend ostream& operator<<(std::ostream& os, const ZAU& zau) {
     os << "Numero: " << zau.getNumero() << "\n"
        << "Type: " << zau.getType() << "\n"
-       << zau.getForme() << "\n"
+       << "" << zau.getForme() << "\n"
        << "Proprietaire: " << zau.getProprietaire() << "\n"
        << "Surface: " << zau.getSurface() << "\n"
-       << "Constructible: " << zau.getSurfaceConstructible() << "\n";
+       << "Constructible: " << zau.getSurfaceConstructible() * 100 << " %\n";
+       //<< "Constructible: " << zau.getSurfaceConstructible() << "\n";
        
     return os;
     }

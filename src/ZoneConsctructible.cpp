@@ -19,7 +19,6 @@ void Z_Constructible::setSurfaceConstruite(float surface){
     this->surfaceConstruite= surface; 
 }
 
-
 /*void Parcelle::setType(string type){
     this ->type=type; 
 }*/

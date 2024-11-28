@@ -1,8 +1,15 @@
 #include "ZoneAUrbaniser.h"
+#include <iostream>
+#include "parcelle.h"
+#include "ZoneConstructible.h"
+using namespace std;
 
 ZAU::ZAU(int num, std::string prop, Polygone<int> forme, float surface)
     : Z_Constructible(num, prop, forme), surface_constructible(surface) {
-    // Initialisation du membre surface_constructible
+    setType("ZAU"); // Set the type to "ZAU"
+    setNumero(num);
+    setProprietaire(prop);
+    setForme(forme);
 }
 
 float ZAU::getSurfaceConstructible() const {
