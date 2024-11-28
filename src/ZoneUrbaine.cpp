@@ -8,6 +8,7 @@ ZoneUrbaine::ZoneUrbaine() : ZoneConstructible(), surfaceRestante(0.0) {}
 ZoneUrbaine::ZoneUrbaine(int num, std::string prop, Polygone<int> forme, float surfaceConstruite)
     : ZoneConstructible(num, prop, forme, surfaceConstruite) {
     surfaceRestante = getSurface() - surfaceConstruite; // Calcul de la surface restante
+    setType("ZU");
     setNumero(num);
     setProprietaire(prop);
     setForme(forme);
@@ -16,7 +17,14 @@ ZoneUrbaine::ZoneUrbaine(int num, std::string prop, Polygone<int> forme, float s
 
 // Constructeur avec la surface construite et la surface restante spécifiées
 ZoneUrbaine::ZoneUrbaine(int num, std::string prop, Polygone<int> forme, float surfaceConstruite, float surfaceRestante)
-    : ZoneConstructible(num, prop, forme, surfaceConstruite), surfaceRestante(surfaceRestante) {}
+    : ZoneConstructible(num, prop, forme, surfaceConstruite), surfaceRestante(surfaceRestante) {
+    surfaceRestante = getSurface() - surfaceConstruite; // Calcul de la surface restante
+    setType("ZU");
+    setNumero(num);
+    setProprietaire(prop);
+    setForme(forme);
+
+}
 
 // Méthode pour obtenir la surface constructible restante
 float ZoneUrbaine::surfaceConstructible() {

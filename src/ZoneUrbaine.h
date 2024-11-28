@@ -22,6 +22,17 @@ public:
     float getSurfaceRestante() const;
     void setSurfaceRestante(float surface);
     virtual float getSurfaceConstruite() const;
+
+    friend std::ostream& operator<<(std::ostream& os, const ZoneUrbaine& zu) {
+        os << "Numero: " << zu.getNumero() << "\n"
+           << "Type: " << zu.getType() << "\n"
+           << "" << zu.getForme() << "\n"
+           << "Proprietaire: " << zu.getProprietaire() << "\n"
+           << "Surface: " << zu.getSurface() << "\n"
+           << "Surface construite: " << zu.getSurfaceConstruite() << "\n"
+           << "Surface constructible restante: " << zu.getSurfaceRestante() << "\n";
+        return os;
+    }
 };
 
 #endif // ZONEURBAINE_H
