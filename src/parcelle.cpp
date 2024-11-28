@@ -6,6 +6,12 @@
 
 using namespace std;
 
+Parcelle::Parcelle(){
+    numero=0;
+    proprietaire="";
+    forme=Polygone<int>();
+}
+
 Parcelle::Parcelle(int num, string prop, Polygone<int> forme)
         :numero(num), proprietaire(prop), forme(forme){}
     

@@ -6,6 +6,8 @@
 #include "ZoneNaturelle.h"
 #include "ZoneAgricole.h"
 
+
+ZA::ZA(): ZN(0, "", Polygone<int>()), type_culture(""){}
 ZA::ZA(int num, string prop, Polygone<int> forme, string culture): ZN(num, prop, forme), type_culture(culture){}
 
 
@@ -25,3 +27,5 @@ float ZA:: surfaceConstructible(){
     }   
     return surfaceConstructible; 
 }
+
+

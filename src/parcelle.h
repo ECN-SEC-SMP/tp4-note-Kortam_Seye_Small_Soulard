@@ -21,6 +21,7 @@ protected:
     void calculerSurface();
 
 public:
+    Parcelle();
     Parcelle(int num, string prop, Polygone<int> forme);
     //Parcelle(const Parcelle& parc);
 
