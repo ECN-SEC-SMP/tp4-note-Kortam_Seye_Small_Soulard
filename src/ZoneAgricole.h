@@ -19,10 +19,9 @@ public:
     void setType(std::string type) override; // Redéfinition de setType
     //virtual float surfaceConstructible() override = 0;
 
-
-    /*void set_type_culture(string culture ) ; 
+    void set_type_culture(string culture ) ; 
     string get_type_culture () const; 
-    float surfaceConstructible(); */
+    float surfaceConstructible(); 
     
 };
 

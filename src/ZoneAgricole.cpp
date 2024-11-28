@@ -16,7 +16,7 @@ void ZA::set_type_culture(string culture)  {
 }
 
 string ZA::get_type_culture() const{
-    return type_culture; 
+    return this->type_culture; 
 } 
 
 float ZA:: surfaceConstructible(){
@@ -28,4 +28,7 @@ float ZA:: surfaceConstructible(){
     return surfaceConstructible; 
 }
 
+void ZA::setType(std::string type) {
+    this->type = type;
+}
 
