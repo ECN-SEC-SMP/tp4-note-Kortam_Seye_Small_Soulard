@@ -26,6 +26,11 @@ int main() {
     ZAU* zauParcel = new ZAU(35, "Nirmine", poly3, 0.45);
     cout << *zauParcel << endl;
 
+    vector<Point2D<int>> sommets4 = {Point2D<int>(0, 0), Point2D<int>(4, 0), Point2D<int>(0, 4),Point2D<int>(4, 4)};
+    Polygone<int> poly4(sommets4);
+    ZoneUrbaine* zuParcel = new ZoneUrbaine(45, "Fatou", poly4, 0.45);
+    cout << *zauParcel << endl;
+
     return 0;
 
 }
