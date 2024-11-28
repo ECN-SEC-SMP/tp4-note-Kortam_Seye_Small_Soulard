@@ -14,7 +14,7 @@ int main() {
     ZN* znParcel = new ZN(36, "Liam", poly);
     cout << *znParcel << endl;
     
-    ZA* zaParcel = new ZA(42, "Nirmine", poly, "Avoine");
+    ZA* zaParcel = new ZA(42, "Milo", poly, "Avoine");
     cout << *zaParcel << endl;
 
 
