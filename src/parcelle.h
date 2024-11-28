@@ -18,6 +18,7 @@ protected:
     Polygone<int> forme;
     int pConstructible;
 
+    //Méthode pour calculer la surface
     void calculerSurface();
 
 public:
@@ -25,24 +26,28 @@ public:
     Parcelle(int num, string prop, Polygone<int> forme);
     //Parcelle(const Parcelle& parc);
 
+    //Getters
     int getNumero() const;
     string getProprietaire() const;
     float getSurface() const;
     Polygone<int> getForme() const;
     string getType() const;
 
+    //Setters
     void setNumero(int n);
     void setProprietaire(string prop);
     void setForme(Polygone<int> forme);
     virtual void setType(string type) = 0;
 
-
+    // Classe d'exception pour gérer les erreurs de surface
     class SurfaceException : public exception {
     public:
         const char* what() const noexcept override {
             return "Surface cannot be negative or zero.";
         }
     };
+
+    //Surcharge opérateur >> pour affichage
     friend ostream& operator<<(ostream& os, const Parcelle& parcelle) {
         os << "Numero: " << parcelle.numero << endl;
         os << "Type: " << parcelle.type << endl;
