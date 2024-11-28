@@ -6,11 +6,13 @@
 #include "ZoneUrbaine.h"
 #include "ZoneNaturelle.h"
 #include "ZoneAUrbaniser.h"
+#include "Carte.h"
 
 using namespace std;
 
 int main() {
 
+    /*
     vector<Point2D<int>> sommets = {Point2D<int>(0, 0), Point2D<int>(1, 0), Point2D<int>(0, 1),Point2D<int>(1, 1)};
     Polygone<int> poly(sommets);
     ZN* znParcel = new ZN(36, "Liam", poly);
@@ -36,6 +38,19 @@ int main() {
     delete zaParcel;
     delete zauParcel;
     delete zuParcel;
+    */
+    Carte carte;  // Créer un objet Carte
+    try {
+        // Essayez de charger les données du fichier
+       carte.lireDepuisFichier("./Parcelle.txt"); 
+;
+        // Afficher ou utiliser la carte chargée
+        carte.afficherCarte();  // Exemple d'affichage si vous avez une méthode pour afficher les données
+        
+    } catch (const std::exception& e) {
+        // En cas d'erreur lors de l'ouverture du fichier
+        std::cerr << e.what() << std::endl;
+    }
 
     return 0;
 }
