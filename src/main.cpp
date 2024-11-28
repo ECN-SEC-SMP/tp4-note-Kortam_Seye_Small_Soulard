@@ -5,6 +5,8 @@
 #include "ZoneAgricole.h"
 #include "ZoneUrbaine.h"
 #include "ZoneNaturelle.h"
+#include "ZoneAUrbaniser.h"
+
 using namespace std;
 
 int main() {
@@ -20,6 +22,10 @@ int main() {
     ZA* zaParcel = new ZA(42, "Milo", poly2, "Avoine");
     cout << *zaParcel << endl;
 
+    vector<Point2D<int>> sommets3 = {Point2D<int>(0, 0), Point2D<int>(1, 0), Point2D<int>(0, 1),Point2D<int>(1, 1)};
+    Polygone<int> poly3(sommets3);
+    ZAU* zauParcel = new ZAU(42, "Nirmine", poly3, 0.2);
+    cout << *zauParcel << endl;
 
     return 0;
 

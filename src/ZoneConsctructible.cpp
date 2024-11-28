@@ -13,11 +13,7 @@ Z_Constructible::Z_Constructible(int num, string prop, Polygone<int> forme): Par
 Z_Constructible::Z_Constructible(int num, std::string prop, Polygone<int> forme, float surfaceConstruite)
     : Parcelle(num, prop, forme), surfaceConstruite(surfaceConstruite) {}
 
-float Z_Constructible::getSurfaceConstruite()
-{
-    return surfaceConstruite; 
-        
-    }
+float Z_Constructible::getSurfaceConstruite(){return surfaceConstruite;}
  
 void Z_Constructible::setSurfaceConstruite(float surface){
     this->surfaceConstruite= surface; 

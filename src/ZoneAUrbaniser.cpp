@@ -1,4 +1,27 @@
-#include <iostream>
+#include "ZoneAUrbaniser.h"
+
+ZAU::ZAU(int num, std::string prop, Polygone<int> forme, float surface)
+    : Z_Constructible(num, prop, forme), surface_constructible(surface) {
+    // Initialisation du membre surface_constructible
+}
+
+float ZAU::getSurfaceConstructible() const {
+    return surface_constructible;
+}
+
+void ZAU::setSurfaceConstructible(float surface) {
+    if (surface >= 0.0f && surface <= 1.0f) {
+        surface_constructible = surface;
+    } else {
+        std::cerr << "Surface constructible doit être entre 0 et 1." << std::endl;
+    }
+}
+
+float ZAU::surfaceConstructible() {
+    return Z_Constructible::surface * surface_constructible;
+}
+
+/*#include <iostream>
 
 #include "ZoneUrbaine.h"
 #include "parcelle.h"
@@ -11,3 +34,4 @@ float ZAU::surfaceConstructible()
     return Parcelle::surface;
 }
 
+*/
