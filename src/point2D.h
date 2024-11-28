@@ -32,7 +32,7 @@ public:
 
     // Surcharge de l'opérateur << pour afficher les coordonnées
     friend std::ostream& operator<<(std::ostream& os, const Point2D<T>& point) {
-        os << "(" << point.x << ", " << point.y << ")";
+        os << "[" << point.x << ";" << point.y << "]";
         return os;
     }
 };

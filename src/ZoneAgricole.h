@@ -32,7 +32,7 @@ public:
     friend ostream& operator<<(std::ostream& os, const ZA& za) {
     os << "Numero: " << za.getNumero() << "\n"
        << "Type: " << za.getType() << "\n"
-       << za.getForme() << "\n"
+       << "" << za.getForme() << "\n"
        << "Proprietaire: " << za.getProprietaire() << "\n"
        << "Culture: " << za.get_type_culture() << "\n"
        << "Surface: " << za.getSurface() << "\n";
