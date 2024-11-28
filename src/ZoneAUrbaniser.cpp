@@ -1,8 +1,8 @@
-#include "ZoneAUrbaniser.h"
 #include <iostream>
+
+#include "ZoneUrbaine.h"
 #include "parcelle.h"
-#include "ZoneConstructible.h"
-using namespace std;
+#include "ZoneAUrbaniser.h"
 
 ZAU::ZAU(int num, std::string prop, Polygone<int> forme, float surface)
     : Z_Constructible(num, prop, forme), surface_constructible(surface) {

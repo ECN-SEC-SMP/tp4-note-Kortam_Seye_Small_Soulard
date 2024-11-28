@@ -21,15 +21,22 @@ int main() {
     ZA* zaParcel = new ZA(42, "Milo", poly2, "Avoine");
     cout << *zaParcel << endl;
 
-    vector<Point2D<int>> sommets3 = {Point2D<int>(0, 0), Point2D<int>(3, 0), Point2D<int>(0, 3),Point2D<int>(3, 3)};
+    // Exemple de Parcelle Zone Urbaine
+    vector<Point2D<int>> sommets3 = {Point2D<int>(0, 0), Point2D<int>(4, 0), Point2D<int>(4, 3), Point2D<int>(0, 3)};
     Polygone<int> poly3(sommets3);
-    ZAU* zauParcel = new ZAU(35, "Nirmine", poly3, 0.45);
+
+    // Création d'une Zone Urbaine avec une surface construite et une surface restante
+    /*ZoneUrbaine* zoneUrbaine = new ZoneUrbaine(50, "Elle", poly3, 5.0, 7.0);
+
+    // Affichage des informations de la Zone Urbaine
+    zoneUrbaine->afficher(); // Cette méthode doit afficher la zone urbaine
+    */
+    vector<Point2D<int>> sommets4 = {Point2D<int>(0, 0), Point2D<int>(3, 0), Point2D<int>(0, 3),Point2D<int>(3, 3)};
+    Polygone<int> poly4(sommets4);
+    ZAU* zauParcel = new ZAU(35, "MiloZouZou", poly4, 0.45);
     cout << *zauParcel << endl;
 
-    vector<Point2D<int>> sommets4 = {Point2D<int>(0, 0), Point2D<int>(4, 0), Point2D<int>(0, 4),Point2D<int>(4, 4)};
-    Polygone<int> poly4(sommets4);
-    ZoneUrbaine* zuParcel = new ZoneUrbaine(45, "Fatou", poly4, 0.45);
-    cout << *zauParcel << endl;
+
 
     return 0;
 

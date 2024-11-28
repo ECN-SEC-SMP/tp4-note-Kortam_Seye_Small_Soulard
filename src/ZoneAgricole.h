@@ -9,7 +9,7 @@
 
 using namespace std;
 
-class ZA: virtual public ZN , virtual public ZoneConstructible
+class ZA: virtual public ZN , virtual public Z_Constructible
 {
 private:
     std::string type_culture; 
