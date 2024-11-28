@@ -13,8 +13,11 @@ int main() {
     Polygone<int> poly(sommets);
     ZN* znParcel = new ZN(36, "Liam", poly);
     cout << *znParcel << endl;
-    
-    ZA* zaParcel = new ZA(42, "Nirmine", poly, "Avoine");
+
+
+    vector<Point2D<int>> sommets2 = {Point2D<int>(0, 0), Point2D<int>(1, 0), Point2D<int>(0, 1),Point2D<int>(1, 1)};
+    Polygone<int> poly2(sommets2);
+    ZA* zaParcel = new ZA(42, "Milo", poly2, "Avoine");
     cout << *zaParcel << endl;
 
 

@@ -7,8 +7,11 @@
 #include "ZoneAgricole.h"
 
 
-ZA::ZA(): ZN(0, "", Polygone<int>()), type_culture(""){}
-ZA::ZA(int num, string prop, Polygone<int> forme, string culture): ZN(num, prop, forme), type_culture(culture){}
+ZA::ZA(int num, std::string prop, Polygone<int> forme, std::string culture)
+    : Parcelle(num, prop, forme), ZN(num, prop, forme), Z_Constructible(num, prop, forme){
+    setType("ZA");  // Initialise le type comme "ZA"
+    set_type_culture(culture);
+}
 
 
 void ZA::set_type_culture(string culture)  {
