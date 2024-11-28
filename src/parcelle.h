@@ -1,3 +1,12 @@
+/**
+ * @file parcelle.h
+ * @authors KORTAM Nirmine, SEYE Fatou,
+ *          MILO SOULARD, LIAM SMALL
+ * @date 28/11/2024
+ * @brief Création de la classe Parcelle, attributs et méthodes, 
+ */
+
+
 #ifndef PARCELLE_H
 #define PARCELLE_H
 
@@ -18,28 +27,27 @@ protected:
     Polygone<int> forme;
     int pConstructible;
 
-    //Méthode pour calculer la surface
+    /** Méthode pour calculer la surface */
     void calculerSurface();
 
 public:
     Parcelle();
     Parcelle(int num, string prop, Polygone<int> forme);
-    //Parcelle(const Parcelle& parc);
 
-    //Getters
+    /** Getters*/
     int getNumero() const;
     string getProprietaire() const;
     float getSurface() const;
     Polygone<int> getForme() const;
     string getType() const;
 
-    //Setters
+    /** Setters*/
     void setNumero(int n);
     void setProprietaire(string prop);
     void setForme(Polygone<int> forme);
     virtual void setType(string type) = 0;
 
-    // Classe d'exception pour gérer les erreurs de surface
+    /** Classe d'exception pour gérer les erreurs de surface */
     class SurfaceException : public exception {
     public:
         const char* what() const noexcept override {
@@ -47,7 +55,7 @@ public:
         }
     };
 
-    //Surcharge opérateur >> pour affichage
+    /** Surcharge opérateur >> pour affichage */
     friend ostream& operator<<(ostream& os, const Parcelle& parcelle) {
         os << "Numero: " << parcelle.numero << endl;
         os << "Type: " << parcelle.type << endl;
@@ -57,7 +65,7 @@ public:
         return os;
     }
 
-    // Ajout d'un destructeur virtuel pour permettre une suppression correcte des objets dérivés
+    /** Ajout d'un destructeur virtuel pour permettre une suppression correcte des objets dérivés */
     virtual ~Parcelle() {}
 
 };

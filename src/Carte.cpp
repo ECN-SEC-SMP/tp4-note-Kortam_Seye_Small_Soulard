@@ -1,29 +1,42 @@
+
+/**
+ * @file carte.cpp
+ * @authors KORTAM Nirmine, SEYE Fatou,
+ *          MILO SOULARD, LIAM SMALL
+ * @date 28/11/2024
+ * @brief Programme pour la  carte.
+ * @details ouverture de fichier contenant les parcelles ,
+ * affichage des parcelles
+ *sauvegarde de la carte dans un fichier
+ */
+
+
 #include "Carte.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <stdexcept>
 
-// Constructeur par défaut
+/**  Constructeur par défaut*/
 Carte::Carte() : surfaceTotale(0.0f) {}
 
-// Constructeur qui charge les parcelles depuis un fichier
+/** Constructeur qui charge les parcelles depuis un fichier*/
 Carte::Carte(const std::string& filename) : surfaceTotale(0.0f) {
     lireDepuisFichier(filename);
 }
 
-// Méthode pour ajouter une parcelle à la carte
+/**  Méthode pour ajouter une parcelle à la carte */
 void Carte::ajouterParcelle(Parcelle* parcelle) {
     parcelles.push_back(parcelle);
     surfaceTotale += parcelle->getSurface();
 }
 
-// Calcul de la surface totale de la carte
+/**  Calcul de la surface totale de la carte */
 float Carte::calculerSurfaceTotale() const {
     return surfaceTotale;
 }
 
-// Lecture des parcelles depuis un fichier
+/** Lecture des parcelles depuis un fichier */
 void Carte::lireDepuisFichier(const std::string& filename) {
     std::ifstream fichier(filename);
     if (!fichier.is_open()) {
@@ -37,8 +50,8 @@ void Carte::lireDepuisFichier(const std::string& filename) {
         int numero;
         iss >> typeParcelle >> numero >> proprietaire;
 
-        // Lecture des points formant la parcelle
-        std::getline(fichier, ligne);  // Lire la ligne des points
+        /**  Lecture des points formant la parcelle */
+        std::getline(fichier, ligne);  /** Lire la ligne des points */
         std::istringstream pointsStream(ligne);
         std::vector<Point2D<int>> points;
         int x, y;
@@ -46,9 +59,9 @@ void Carte::lireDepuisFichier(const std::string& filename) {
             points.push_back(Point2D<int>(x, y));
         }
 
-        Polygone<int> forme(points); // Créer la forme du polygone
+        Polygone<int> forme(points); /** Créer la forme du polygone */
 
-        // Déterminer le type de la parcelle et la créer
+        /** Déterminer le type de la parcelle et la créer */
         Parcelle* parcelle = nullptr;
         if (typeParcelle == "ZA") {
             std::string typeCulture;
@@ -75,7 +88,7 @@ void Carte::lireDepuisFichier(const std::string& filename) {
     fichier.close();
 }
 
-// Sauvegarde la carte dans un fichier
+/** Sauvegarde la carte dans un fichier */
 void Carte::sauvegarderDansFichier(const std::string& filename) const {
     std::ofstream fichier(filename);
     if (!fichier) {
@@ -90,14 +103,14 @@ void Carte::sauvegarderDansFichier(const std::string& filename) const {
     fichier.close();
 }
 
-// Afficher la carte avec toutes ses parcelles
+/** Afficher la carte avec toutes ses parcelles */
 void Carte::afficherCarte() const {
     for (const auto& parcelle : parcelles) {
         std::cout << *parcelle << std::endl;
     }
 }
 
-// Destructeur pour libérer la mémoire allouée pour les objets Parcelle
+/**  Destructeur pour libérer la mémoire allouée pour les objets Parcelle */
 Carte::~Carte() {
     for (auto parcelle : parcelles) {
         delete parcelle;

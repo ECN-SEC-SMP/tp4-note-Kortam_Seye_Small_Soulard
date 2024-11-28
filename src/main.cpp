@@ -1,3 +1,13 @@
+/**
+ * @file main.cpp
+ * @authors KORTAM Nirmine, SEYE Fatou,
+ *          MILO SOULARD, LIAM SMALL
+ * @date 28/11/2024
+ * @brief Programme Principal.
+ * @details test de nos différentes classes et jeux d'essais
+ */
+
+
 #include <iostream>
 #include "point2D.h"
 #include "parcelle.h"
@@ -33,22 +43,26 @@ int main() {
     ZoneUrbaine* zuParcel = new ZoneUrbaine(45, "Fatou", poly4, 0.11,0.44);
     cout << *zuParcel << endl;
 
-    // Suppression des objets dynamiquement alloués pour éviter les fuites de mémoire
-    delete znParcel;
-    delete zaParcel;
-    delete zauParcel;
-    delete zuParcel;
+    //  Suppression des objets dynamiquement alloués pour éviter les fuites de mémoire 
+    
+    
+    // delete znParcel;
+    // delete zaParcel;
+    // delete zauParcel;
+    // delete zuParcel;
+    
     */
-    Carte carte;  // Créer un objet Carte
+    /**   Creer un objet Carte  */
+    Carte carte;  
     try {
-        // Essayez de charger les données du fichier
+        /**  Essayez de charger les données du fichier */
        carte.lireDepuisFichier("Parcelles.txt"); 
 
-        // Afficher ou utiliser la carte chargée
-        carte.afficherCarte();  // affichage
+        /** Afficher ou utiliser la carte chargée */
+        carte.afficherCarte();  /**  affichage */
         
     } catch (const std::exception& e) {
-        // En cas d'erreur lors de l'ouverture du fichier
+        /** En cas d'erreur lors de l'ouverture du fichier  */
         std::cerr << e.what() << std::endl;
     }
 

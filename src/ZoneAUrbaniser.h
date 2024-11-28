@@ -1,3 +1,11 @@
+/**
+ * @file ZoneAUrbaniser.h
+ * @authors KORTAM Nirmine, SEYE Fatou,
+ *          MILO SOULARD, LIAM SMALL
+ * @date 28/11/2024
+ * @brief Création de la classe ZoneAUrbaniser avec ses attributs et fonctions.
+ */
+
 #ifndef ZAU_H
 #define ZAU_H
 
@@ -12,19 +20,19 @@ private:
 
 public:
 
-    //Constructeur
+    /** Constructeur */
     ZAU(int num, std::string prop, Polygone<int> forme, float surface) ;
 
-    //Getter pour la surface xconstructible
+    /** Getter pour la surface xconstructible */
     float getSurfaceConstructible() const;
 
-    //Setter pour la surface constructible
+    /** Setter pour la surface constructible */
     void setSurfaceConstructible(float surface);
 
-    //Méthode pour obtenir la surface constructible
+    /** Méthode pour obtenir la surface constructible */
     float surfaceConstructible();
 
-    //Surcharge de l'opérateur << pour affichage
+    /** Surcharge de l'opérateur << pour affichage */
     friend ostream& operator<<(std::ostream& os, const ZAU& zau) {
     os << "Numero: " << zau.getNumero() << "\n"
        << "Type: " << zau.getType() << "\n"

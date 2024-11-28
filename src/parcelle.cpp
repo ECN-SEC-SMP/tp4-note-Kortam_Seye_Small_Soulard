@@ -1,3 +1,12 @@
+/**
+ * @file parcelle.cpp
+ * @authors KORTAM Nirmine, SEYE Fatou,
+ *          MILO SOULARD, LIAM SMALL
+ * @date 28/11/2024
+ * @brief Implémentation de la classe Parcelle,
+ */
+
+
 #include "parcelle.h"
 #include "polygone.h"
 #include "point2D.h"
@@ -12,17 +21,21 @@ Parcelle::Parcelle(){
     forme=Polygone<int>();
 }
 
+/** Constucteur de Parcelle contenant le numéro de la parcelle, le propriétaire, la forme */
 Parcelle::Parcelle(int num, string prop, Polygone<int> forme)
         :numero(num), proprietaire(prop), forme(forme){}
     
+/** getter du numéro de parcelle */
 int Parcelle::getNumero() const{
     return numero; 
 }
 
+/** getter nom du propriétaire  */
 string Parcelle::getProprietaire() const{
     return proprietaire;
 }
 
+/** calcule de la surface de parcelle */
 float Parcelle::getSurface() const{
 
     vector<Point2D<int>> sommets = forme.getSommets();
@@ -49,21 +62,27 @@ float Parcelle::getSurface() const{
     return abs(surface) / 2.0; 
 }
 
-
+/** fome de parcelle */
 Polygone<int> Parcelle::getForme() const{
     return forme;
 }
 
+/** type de parcelle */
 string Parcelle::getType() const{
     return type;
 }
 
+/** définition numéro de parcelle */
 void Parcelle::setNumero(int n){
     this->numero=n;
 }
+
+/** définition nom de propriétaire  */
 void Parcelle::setProprietaire(string prop){
     this->proprietaire=prop; 
 }
+
+/** définition de la forme de parcelle */
 void Parcelle::setForme(Polygone<int> forme){
     this ->forme=forme; 
 }
