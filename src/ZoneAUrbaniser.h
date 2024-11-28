@@ -5,7 +5,7 @@
 #include "parcelle.h"
 #include "ZoneConstructible.h"
 
-class ZAU : public Z_Constructible {
+class ZAU : public ZoneConstructible {
 
 public:
 
@@ -28,7 +28,7 @@ public:
 #include "ZoneConstructible.h"
 
 using namespace std;
-class ZAU : public Z_Constructible {
+class ZAU : public ZoneConstructible {
 private:
     float surface_constructible;
 

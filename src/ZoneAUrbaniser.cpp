@@ -5,7 +5,7 @@
 using namespace std;
 
 ZAU::ZAU(int num, std::string prop, Polygone<int> forme, float surface)
-    : Z_Constructible(num, prop, forme), surface_constructible(surface) {
+    : ZoneConstructible(num, prop, forme), surface_constructible(surface) {
     setType("ZAU"); // Set the type to "ZAU"
     setNumero(num);
     setProprietaire(prop);
@@ -25,7 +25,7 @@ void ZAU::setSurfaceConstructible(float surface) {
 }
 
 float ZAU::surfaceConstructible() {
-    return Z_Constructible::surface * surface_constructible;
+    return ZoneConstructible::surface * surface_constructible;
 }
 
 /*#include <iostream>
@@ -34,7 +34,7 @@ float ZAU::surfaceConstructible() {
 #include "parcelle.h"
 #include "ZoneAUrbaniser.h"
 
-ZAU::ZAU(int num, string prop, Polygone<int> forme): Z_Constructible(num, prop, forme) {}
+ZAU::ZAU(int num, string prop, Polygone<int> forme): ZoneConstructible(num, prop, forme) {}
 
 float ZAU::surfaceConstructible()
 {

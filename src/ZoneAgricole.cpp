@@ -8,7 +8,7 @@
 
 
 ZA::ZA(int num, std::string prop, Polygone<int> forme, std::string culture)
-    : Parcelle(num, prop, forme), ZN(num, prop, forme), Z_Constructible(num, prop, forme){
+    : Parcelle(num, prop, forme), ZN(num, prop, forme), ZoneConstructible(num, prop, forme){
     setType("ZA");  // Initialise le type comme "ZA"
     set_type_culture(culture);
 }
@@ -24,8 +24,8 @@ string ZA::get_type_culture() const{
 
 float ZA:: surfaceConstructible(){
     float surfaceConstructible =0; 
-    if ((surfaceConstruite < (Z_Constructible::surface*0.1)) & (surfaceConstruite < 200)){
-        surfaceConstructible= Z_Constructible::surface - surfaceConstruite ; 
+    if ((surfaceConstruite < (ZoneConstructible::surface*0.1)) & (surfaceConstruite < 200)){
+        surfaceConstructible= ZoneConstructible::surface - surfaceConstruite ; 
         return surfaceConstructible;
     }   
     return surfaceConstructible; 

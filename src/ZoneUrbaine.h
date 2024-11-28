@@ -1,24 +1,27 @@
-#ifndef ZU_H
-#define ZU_H
+#ifndef ZONEURBAINE_H
+#define ZONEURBAINE_H
 
-#include <iostream>
-
-#include "parcelle.h"
 #include "ZoneConstructible.h"
 
-
-
-class ZU : public Z_Constructible {
+class ZoneUrbaine : public ZoneConstructible {
+private:
+    float surfaceRestante;  // Surface encore constructible
 
 public:
+    ZoneUrbaine();  // Constructeur par défaut
+    ZoneUrbaine(int num, std::string prop, Polygone<int> forme, float surfaceConstruite);
+    ZoneUrbaine(int num, std::string prop, Polygone<int> forme, float surfaceConstruite, float surfaceRestante);
 
-    ZU(int num, string prop, Polygone<int> forme, float surfaceConstruite);
+    // Redéfinition de la méthode pour calculer la surface constructible restante
+    float surfaceConstructible() override;
 
-    float surfaceConstructible();
-    
+    // Surcharge de la méthode pour afficher les informations
+    void afficher() const;
+
+    // Getter et Setter
+    float getSurfaceRestante() const;
+    void setSurfaceRestante(float surface);
+    virtual float getSurfaceConstruite() const;
 };
 
-#endif // ZU_H
-
-
-
+#endif // ZONEURBAINE_H
