@@ -1,0 +1,133 @@
+\doxysection{polygone.\+h}
+\hypertarget{polygone_8h_source}{}\label{polygone_8h_source}\mbox{\hyperlink{polygone_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ POLYGONE\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ POLYGONE\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}point2d.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <stdexcept>}\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_polygone}{Polygone}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ std::vector<Point2D<T>>\ sommets;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_polygone_aaa33d49c912f6b95ae7ea4d824803009}{Polygone}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_polygone_aaa33d49c912f6b95ae7ea4d824803009}{Polygone}}(\textcolor{keyword}{const}\ vector<\mbox{\hyperlink{class_point2_d}{Point2D<T>}}>\&\ listeSommets)\ :\ sommets(listeSommets)\ \{\}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_polygone_aaa33d49c912f6b95ae7ea4d824803009}{Polygone}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_polygone}{Polygone<T>}}\&\ poly)\ :\ sommets(poly.sommets)\ \{\}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \ \ std::vector<Point2D<T>>\ \mbox{\hyperlink{class_polygone_a4d0fade9612248d189df3e902e0da722}{getSommets}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sommets;}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_polygone_a56803723bebc36b7d89305c7f2e5c661}{setSommets}}(\textcolor{keyword}{const}\ vector<\mbox{\hyperlink{class_point2_d}{Point2D<T>}}>\&\ listeSommets)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ sommets\ =\ listeSommets;}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_polygone_af5e97756f85398d6e2338f18a42a6655}{addPoint}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point2_d}{Point2D<T>}}\&\ point)\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ sommets.push\_back(point);}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_polygone_aeb5240b48c5c51fea0602b708944a777}{translate}}(T\ dx,\ T\ dy)\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ sommet\ :\ sommets)\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ sommet.translate(dx,\ dy);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_polygone_a963fdd9e997c8128fb21fd2e65eeb944}{estSensTrigo}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sommets.size()\ <\ 3)\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Un\ polygone\ doit\ avoir\ au\ moins\ 3\ sommets."{}});}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ indexO\ =\ 0;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 1;\ i\ <\ sommets.size();\ ++i)\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sommets[i].getY()\ <\ sommets[indexO].getY()\ ||}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (sommets[i].getY()\ ==\ sommets[indexO].getY()\ \&\&\ sommets[i].getX()\ <\ sommets[indexO].getX()))\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indexO\ =\ i;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ n\ =\ sommets.size();}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ n;\ ++i)\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ current\ =\ (indexO\ +\ i)\ \%\ n;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ next\ =\ (current\ +\ 1)\ \%\ n;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ nextNext\ =\ (next\ +\ 1)\ \%\ n;}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ T\ x1\ =\ sommets[next].getX()\ -\/\ sommets[current].getX();}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ T\ y1\ =\ sommets[next].getY()\ -\/\ sommets[current].getY();}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ T\ x2\ =\ sommets[nextNext].getX()\ -\/\ sommets[current].getX();}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ T\ y2\ =\ sommets[nextNext].getY()\ -\/\ sommets[current].getY();}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ T\ ProduitScal\ =\ x1\ *\ y2\ -\/\ y1\ *\ x2;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ProduitScal\ <\ 0)\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_polygone_ad886e7188e12b85779d8e9401d131852}{CheckSensTrigo}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_polygone_a963fdd9e997c8128fb21fd2e65eeb944}{estSensTrigo}}())\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::logic\_error(\textcolor{stringliteral}{"{}Le\ polygone\ n'est\ pas\ dans\ le\ sens\ trigonométrique."{}});}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_polygone_a94ba2cb5df086e81b5be9b4979b555ff}{segmentsIntersect}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point2_d}{Point2D<T>}}\&\ A,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point2_d}{Point2D<T>}}\&\ B,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point2_d}{Point2D<T>}}\&\ C,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point2_d}{Point2D<T>}}\&\ D)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ ProduitScal\ =\ [](\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point2_d}{Point2D<T>}}\&\ P,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point2_d}{Point2D<T>}}\&\ Q,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point2_d}{Point2D<T>}}\&\ R)\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (Q.\mbox{\hyperlink{class_point2_d_a4c3d8f7647f96035ff5ba0069455219c}{getX}}()\ -\/\ P.\mbox{\hyperlink{class_point2_d_a4c3d8f7647f96035ff5ba0069455219c}{getX}}())\ *\ (R.getY()\ -\/\ P.getY())\ -\/}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (Q.getY()\ -\/\ P.getY())\ *\ (R.getX()\ -\/\ P.\mbox{\hyperlink{class_point2_d_a4c3d8f7647f96035ff5ba0069455219c}{getX}}());}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ T\ d1\ =\ ProduitScal(A,\ B,\ C);}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ T\ d2\ =\ ProduitScal(A,\ B,\ D);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ T\ d3\ =\ ProduitScal(C,\ D,\ A);}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ T\ d4\ =\ ProduitScal(C,\ D,\ B);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (d1\ *\ d2\ <\ 0)\ \&\&\ (d3\ *\ d4\ <\ 0);}
+\DoxyCodeLine{00130\ \ \ \ \ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_polygone_a49ba4c2a0fccda81ef439fc13343bae8}{estCroise}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ n\ =\ sommets.size();}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ <\ 4)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ n;\ ++i)\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ i\ +\ 2;\ j\ <\ n;\ ++j)\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((i\ ==\ 0\ \&\&\ j\ ==\ n\ -\/\ 1)\ ||\ (j\ ==\ i\ +\ 1))\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_polygone_a94ba2cb5df086e81b5be9b4979b555ff}{segmentsIntersect}}(sommets[i],\ sommets[(i\ +\ 1)\ \%\ n],}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sommets[j],\ sommets[(j\ +\ 1)\ \%\ n]))\ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00152\ \ \ \ \ \}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_polygone_a1f47b57c0dec5d02e360430871a93e4b}{CheckCroise}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_polygone_a49ba4c2a0fccda81ef439fc13343bae8}{estCroise}}())\ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::logic\_error(\textcolor{stringliteral}{"{}Le\ polygone\ est\ croisé."{}});}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00161\ \ \ \ \ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ \mbox{\hyperlink{class_polygone_ab2255c587f19c4133d4571f43f693837}{operator<<}}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_polygone}{Polygone<T>}}\&\ poly)\ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}Polygone\ :\ "{}};}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ sommet\ :\ poly.sommets)\ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ sommet\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00173\ \ \ \ \ \}}
+\DoxyCodeLine{00174\ \};}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ POLYGONE\_H}}
+
+\end{DoxyCode}

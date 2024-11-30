@@ -1,0 +1,38 @@
+\doxysection{Zone\+Urbaine.\+h}
+\hypertarget{_zone_urbaine_8h_source}{}\label{_zone_urbaine_8h_source}\mbox{\hyperlink{_zone_urbaine_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\ \#ifndef\ ZONEURBAINE\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ ZONEURBAINE\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_zone_constructible_8h}{ZoneConstructible.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_zone_urbaine}{ZoneUrbaine}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_zone_constructible}{ZoneConstructible}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{float}\ surfaceRestante;\ \ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_zone_urbaine_a87bed44927a3efda23b52fd8b56115a4}{ZoneUrbaine}}();\ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_zone_urbaine_a87bed44927a3efda23b52fd8b56115a4}{ZoneUrbaine}}(\textcolor{keywordtype}{int}\ num,\ std::string\ prop,\ \mbox{\hyperlink{class_polygone}{Polygone<int>}}\ forme,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_zone_constructible_afa7c3eb01f03fb831bead4f4ea8be0f7}{surfaceConstruite}});}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_zone_urbaine_a87bed44927a3efda23b52fd8b56115a4}{ZoneUrbaine}}(\textcolor{keywordtype}{int}\ num,\ std::string\ prop,\ \mbox{\hyperlink{class_polygone}{Polygone<int>}}\ forme,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_zone_constructible_afa7c3eb01f03fb831bead4f4ea8be0f7}{surfaceConstruite}},\ \textcolor{keywordtype}{float}\ surfaceRestante);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_zone_urbaine_adf2e6fcadf2abcc05d86de433f8aba01}{surfaceConstructible}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_zone_urbaine_a320879a0f83ba68fd5889deb3704b2f4}{getSurfaceRestante}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_zone_urbaine_ad2d5eea60e84637c8eae82acbcef1e22}{setSurfaceRestante}}(\textcolor{keywordtype}{float}\ surface);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_zone_urbaine_aad47f54109001dd1e8e53277cbc41f00}{getSurfaceConstruite}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ \mbox{\hyperlink{class_zone_urbaine_aecdf7620122bb459084b364d642cd3c8}{operator<<}}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_zone_urbaine}{ZoneUrbaine}}\&\ zu)\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}Numero:\ "{}}\ <<\ zu.\mbox{\hyperlink{class_parcelle_a8e92e422332206266c135f279dec7c92}{getNumero}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Type:\ "{}}\ <<\ zu.\mbox{\hyperlink{class_parcelle_a9d9e3e9fd3557feb0f811ccc0aab90a2}{getType}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}"{}}\ <<\ zu.\mbox{\hyperlink{class_parcelle_a95a6f8948fb2d73f90df56cb44dee70a}{getForme}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Proprietaire:\ "{}}\ <<\ zu.\mbox{\hyperlink{class_parcelle_aac59528edde7f263fc0c7c4bf7c0eb3f}{getProprietaire}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Surface:\ "{}}\ <<\ zu.\mbox{\hyperlink{class_parcelle_aa23d8891632b62ce2250c3e7e655415b}{getSurface}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Surface\ construite:\ "{}}\ <<\ zu.\mbox{\hyperlink{class_zone_urbaine_aad47f54109001dd1e8e53277cbc41f00}{getSurfaceConstruite}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Surface\ constructible\ restante:\ "{}}\ <<\ zu.\mbox{\hyperlink{class_zone_urbaine_a320879a0f83ba68fd5889deb3704b2f4}{getSurfaceRestante}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ZONEURBAINE\_H}}
+
+\end{DoxyCode}

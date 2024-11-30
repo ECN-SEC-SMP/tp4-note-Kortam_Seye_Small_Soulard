@@ -1,0 +1,46 @@
+\doxysection{Zone\+Agricole.\+h}
+\hypertarget{_zone_agricole_8h_source}{}\label{_zone_agricole_8h_source}\mbox{\hyperlink{_zone_agricole_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ ZA\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ ZA\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_zone_urbaine_8h}{ZoneUrbaine.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{parcelle_8h}{parcelle.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_zone_constructible_8h}{ZoneConstructible.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_zone_naturelle_8h}{ZoneNaturelle.h}}"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_z_a}{ZA}}:\ \textcolor{keyword}{virtual}\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_z_n}{ZN}}\ ,\ \textcolor{keyword}{virtual}\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_zone_constructible}{ZoneConstructible}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \ \ std::string\ type\_culture;\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_z_a_a33cca6b71813ac3861daf74da408d030}{ZA}}(\textcolor{keywordtype}{int}\ num,\ std::string\ prop,\ \mbox{\hyperlink{class_polygone}{Polygone<int>}}\ forme,\ std::string\ culture);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_z_a_a2e12b973c1d7a45bccaf7b8c69d2ec40}{setType}}(std::string\ type)\ \textcolor{keyword}{override};\ }
+\DoxyCodeLine{00031\ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_z_a_a740f3837941445d88336d83cce4e0f31}{set\_type\_culture}}(\textcolor{keywordtype}{string}\ culture\ )\ ;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_z_a_acbf173122eaf818d4b918815da8aa5d4}{get\_type\_culture}}\ ()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_z_a_a8fc725bc45970a92533f5ad2f5175464}{surfaceConstructible}}();\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{friend}\ ostream\&\ \mbox{\hyperlink{class_z_a_a4b515259c8f7f632ad76e495dbf0afdc}{operator<<}}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_z_a}{ZA}}\&\ za)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}Numero:\ "{}}\ <<\ za.\mbox{\hyperlink{class_parcelle_a8e92e422332206266c135f279dec7c92}{getNumero}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Type:\ "{}}\ <<\ za.\mbox{\hyperlink{class_parcelle_a9d9e3e9fd3557feb0f811ccc0aab90a2}{getType}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}"{}}\ <<\ za.\mbox{\hyperlink{class_parcelle_a95a6f8948fb2d73f90df56cb44dee70a}{getForme}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Proprietaire:\ "{}}\ <<\ za.\mbox{\hyperlink{class_parcelle_aac59528edde7f263fc0c7c4bf7c0eb3f}{getProprietaire}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Culture:\ "{}}\ <<\ za.\mbox{\hyperlink{class_z_a_acbf173122eaf818d4b918815da8aa5d4}{get\_type\_culture}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Surface:\ "{}}\ <<\ za.\mbox{\hyperlink{class_parcelle_aa23d8891632b62ce2250c3e7e655415b}{getSurface}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

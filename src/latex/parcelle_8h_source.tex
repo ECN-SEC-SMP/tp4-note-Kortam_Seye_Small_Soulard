@@ -1,0 +1,64 @@
+\doxysection{parcelle.\+h}
+\hypertarget{parcelle_8h_source}{}\label{parcelle_8h_source}\mbox{\hyperlink{parcelle_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ PARCELLE\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ PARCELLE\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}point2D.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{polygone_8h}{polygone.h}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{using\ namespace\ }std;\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_parcelle}{Parcelle}}\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{string}\ type;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ numero;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{string}\ proprietaire;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{float}\ surface;}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_polygone}{Polygone<int>}}\ forme;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ pConstructible;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_parcelle_a40b52d028b82ee42f89eb0db1333cbd4}{calculerSurface}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_parcelle}{Parcelle}}();}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_parcelle}{Parcelle}}(\textcolor{keywordtype}{int}\ num,\ \textcolor{keywordtype}{string}\ prop,\ \mbox{\hyperlink{class_polygone}{Polygone<int>}}\ forme);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_parcelle_a8e92e422332206266c135f279dec7c92}{getNumero}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_parcelle_aac59528edde7f263fc0c7c4bf7c0eb3f}{getProprietaire}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_parcelle_aa23d8891632b62ce2250c3e7e655415b}{getSurface}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_polygone}{Polygone<int>}}\ \mbox{\hyperlink{class_parcelle_a95a6f8948fb2d73f90df56cb44dee70a}{getForme}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_parcelle_a9d9e3e9fd3557feb0f811ccc0aab90a2}{getType}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_parcelle_ad711d58954132e3221b06e6655813c2a}{setNumero}}(\textcolor{keywordtype}{int}\ n);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_parcelle_afc9211b3275e7f8359eaa9f8e4a360f6}{setProprietaire}}(\textcolor{keywordtype}{string}\ prop);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_parcelle_a12470eddee4fdc650140e379b97c049c}{setForme}}(\mbox{\hyperlink{class_polygone}{Polygone<int>}}\ forme);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setType(\textcolor{keywordtype}{string}\ type)\ =\ 0;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_parcelle_1_1_surface_exception}{SurfaceException}}\ :\ \textcolor{keyword}{public}\ exception\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ what()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \textcolor{keyword}{override}\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Surface\ cannot\ be\ negative\ or\ zero."{}};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{friend}\ ostream\&\ \mbox{\hyperlink{class_parcelle_afa05c320e07bcc4cc04dede37b071828}{operator<<}}(ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_parcelle}{Parcelle}}\&\ parcelle)\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}Numero:\ "{}}\ <<\ parcelle.numero\ <<\ endl;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}Type:\ "{}}\ <<\ parcelle.type\ <<\ endl;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ os\ <<\ parcelle.forme\ <<\ endl;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}Proprietaire:\ "{}}\ <<\ parcelle.proprietaire\ <<\ endl;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}Surface:\ "{}}\ <<\ parcelle.\mbox{\hyperlink{class_parcelle_aa23d8891632b62ce2250c3e7e655415b}{getSurface}}()\ <<\ endl;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_parcelle_aaa697fe877698cd7d16690f99d504396}{\string~Parcelle}}()\ \{\}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PARCELLE\_H}}
+
+\end{DoxyCode}

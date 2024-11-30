@@ -1,0 +1,88 @@
+\doxysection{Carte Class Reference}
+\hypertarget{class_carte}{}\label{class_carte}\index{Carte@{Carte}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_carte_a06daaca86c31c80f8308f4a81d46dc9b}{Carte}} ()
+\item 
+\mbox{\hyperlink{class_carte_ae4f88827625a5fdac4a93a4b7aa71673}{Carte}} (const std\+::string \&filename)
+\item 
+void \mbox{\hyperlink{class_carte_a16cedee64ee4a55af6fa07cbbf24f3a2}{ajouter\+Parcelle}} (\mbox{\hyperlink{class_parcelle}{Parcelle}} \texorpdfstring{$\ast$}{*}parcelle)
+\item 
+float \mbox{\hyperlink{class_carte_af0321d4f40bee2f69343a7ebfc90af54}{calculer\+Surface\+Totale}} () const
+\item 
+void \mbox{\hyperlink{class_carte_a864051c7bf59326ad77da920fcf750c9}{lire\+Depuis\+Fichier}} (const std\+::string \&filename)
+\item 
+\Hypertarget{class_carte_ae9502c211077673ef524b5a3ab646fd2}\label{class_carte_ae9502c211077673ef524b5a3ab646fd2} 
+void {\bfseries sauvegarder\+Dans\+Fichier} (const std\+::string \&filename) const
+\item 
+void \mbox{\hyperlink{class_carte_af8b0eadbf3cb7454989078cfcff1178e}{afficher\+Carte}} () const
+\item 
+\mbox{\hyperlink{class_carte_a63300ff55c58b5d5b1674a3fc8f25910}{\texorpdfstring{$\sim$}{\string~}\+Carte}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_carte_a06daaca86c31c80f8308f4a81d46dc9b}\index{Carte@{Carte}!Carte@{Carte}}
+\index{Carte@{Carte}!Carte@{Carte}}
+\doxysubsubsection{\texorpdfstring{Carte()}{Carte()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_carte_a06daaca86c31c80f8308f4a81d46dc9b} 
+Carte\+::\+Carte (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Surface totale de la carte Constructeurs
+
+Constructeur par défaut \Hypertarget{class_carte_ae4f88827625a5fdac4a93a4b7aa71673}\index{Carte@{Carte}!Carte@{Carte}}
+\index{Carte@{Carte}!Carte@{Carte}}
+\doxysubsubsection{\texorpdfstring{Carte()}{Carte()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_carte_ae4f88827625a5fdac4a93a4b7aa71673} 
+Carte\+::\+Carte (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})}
+
+Constructeur qui charge les parcelles depuis un fichier \Hypertarget{class_carte_a63300ff55c58b5d5b1674a3fc8f25910}\index{Carte@{Carte}!````~Carte@{\texorpdfstring{$\sim$}{\string~}Carte}}
+\index{````~Carte@{\texorpdfstring{$\sim$}{\string~}Carte}!Carte@{Carte}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Carte()}{\string~Carte()}}
+{\footnotesize\ttfamily \label{class_carte_a63300ff55c58b5d5b1674a3fc8f25910} 
+Carte\+::\texorpdfstring{$\sim$}{\string~}\+Carte (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Destructeur
+
+Destructeur pour libérer la mémoire allouée pour les objets \doxylink{class_parcelle}{Parcelle} 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_carte_af8b0eadbf3cb7454989078cfcff1178e}\index{Carte@{Carte}!afficherCarte@{afficherCarte}}
+\index{afficherCarte@{afficherCarte}!Carte@{Carte}}
+\doxysubsubsection{\texorpdfstring{afficherCarte()}{afficherCarte()}}
+{\footnotesize\ttfamily \label{class_carte_af8b0eadbf3cb7454989078cfcff1178e} 
+void Carte\+::afficher\+Carte (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Afficher la carte avec toutes ses parcelles \Hypertarget{class_carte_a16cedee64ee4a55af6fa07cbbf24f3a2}\index{Carte@{Carte}!ajouterParcelle@{ajouterParcelle}}
+\index{ajouterParcelle@{ajouterParcelle}!Carte@{Carte}}
+\doxysubsubsection{\texorpdfstring{ajouterParcelle()}{ajouterParcelle()}}
+{\footnotesize\ttfamily \label{class_carte_a16cedee64ee4a55af6fa07cbbf24f3a2} 
+void Carte\+::ajouter\+Parcelle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_parcelle}{Parcelle}} \texorpdfstring{$\ast$}{*}}]{parcelle}{}\end{DoxyParamCaption})}
+
+Constructeur qui charge la carte à partir d\textquotesingle{}un fichier Méthodes
+
+Méthode pour ajouter une parcelle à la carte \Hypertarget{class_carte_af0321d4f40bee2f69343a7ebfc90af54}\index{Carte@{Carte}!calculerSurfaceTotale@{calculerSurfaceTotale}}
+\index{calculerSurfaceTotale@{calculerSurfaceTotale}!Carte@{Carte}}
+\doxysubsubsection{\texorpdfstring{calculerSurfaceTotale()}{calculerSurfaceTotale()}}
+{\footnotesize\ttfamily \label{class_carte_af0321d4f40bee2f69343a7ebfc90af54} 
+float Carte\+::calculer\+Surface\+Totale (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Calcul de la surface totale de la carte \Hypertarget{class_carte_a864051c7bf59326ad77da920fcf750c9}\index{Carte@{Carte}!lireDepuisFichier@{lireDepuisFichier}}
+\index{lireDepuisFichier@{lireDepuisFichier}!Carte@{Carte}}
+\doxysubsubsection{\texorpdfstring{lireDepuisFichier()}{lireDepuisFichier()}}
+{\footnotesize\ttfamily \label{class_carte_a864051c7bf59326ad77da920fcf750c9} 
+void Carte\+::lire\+Depuis\+Fichier (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})}
+
+Lecture des parcelles depuis un fichier Lecture des points formant la parcelle
+
+Lire la ligne des points
+
+Créer la forme du polygone
+
+Déterminer le type de la parcelle et la créer
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_carte_8h}{Carte.\+h}}\item 
+\mbox{\hyperlink{_carte_8cpp}{Carte.\+cpp}}\end{DoxyCompactItemize}
