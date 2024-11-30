@@ -1,0 +1,28 @@
+Parcelle n°36 :
+Type : ZN
+Polygone : Polygone : [0;0] [1;0] [0;1] [1;1] 
+Propriétaire : Liam
+Surface : 1
+
+Parcelle n°42 :
+Type : ZA
+Polygone : Polygone : [0;0] [2;0] [0;2] [2;2] 
+Propriétaire : Milo
+Surface : 4
+Type culture : Avoine
+
+Parcelle n°35 :
+Type : ZAU
+Polygone : Polygone : [0;0] [3;0] [0;3] [3;3] 
+Propriétaire : Nirmine
+Surface : 9
+% constructible : 0 %
+
+Parcelle n°45 :
+Type : ZU
+Polygone : Polygone : [0;0] [4;0] [0;4] [4;4] 
+Propriétaire : Fatou
+Surface : 16
+Surface construite : 0.11
+Surface à construire restante : 0.44
+

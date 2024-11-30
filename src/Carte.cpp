@@ -88,7 +88,6 @@ void Carte::lireDepuisFichier(const std::string& filename) {
     fichier.close();
 }
 
-/** Sauvegarde la carte dans un fichier */
 void Carte::sauvegarderDansFichier(const std::string& filename) const {
     std::ofstream fichier(filename);
     if (!fichier) {
@@ -96,8 +95,25 @@ void Carte::sauvegarderDansFichier(const std::string& filename) const {
     }
 
     for (const auto& parcelle : parcelles) {
-        fichier << parcelle->getType() << " " << parcelle->getNumero() << " " << parcelle->getProprietaire() << "\n";
-        fichier << parcelle->getForme() << "\n"; // Sauvegarde la forme sous forme de points
+        fichier << "Parcelle n°" << parcelle->getNumero() << " :\n";
+        fichier << "Type : " << parcelle->getType() << "\n";
+        fichier << "Polygone : " << parcelle->getForme() << "\n";
+        fichier << "Propriétaire : " << parcelle->getProprietaire() << "\n";
+        fichier << "Surface : " << parcelle->getSurface() << "\n";
+
+        // Vérification du type de parcelle pour ajouter les attributs spécifiques
+        if (auto* zu = dynamic_cast<ZoneUrbaine*>(parcelle)) {
+            fichier << "Surface construite : " << zu->getSurfaceConstruite() << "\n";
+            fichier << "Surface à construire restante : " << zu->surfaceConstructible() << "\n";
+        } 
+        else if (auto* zau = dynamic_cast<ZAU*>(parcelle)) {
+            fichier << "% constructible : " << zau->surfaceConstructible() * 100 << " %\n";
+        } 
+        else if (auto* za = dynamic_cast<ZA*>(parcelle)) {
+            fichier << "Type culture : " << za->get_type_culture() << "\n";
+        }
+
+        fichier << "\n"; // Séparation entre les parcelles pour plus de lisibilité
     }
 
     fichier.close();
