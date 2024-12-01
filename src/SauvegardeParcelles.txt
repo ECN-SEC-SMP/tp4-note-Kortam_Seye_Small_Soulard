@@ -15,5 +15,13 @@ Type : ZA
 Polygone : Polygone : [0;0] [80;0] [80;30] [0;30] 
 Propriétaire : Babin
 Surface : 2400
-Type culture : ZAU 25 Robert 16 
+Type culture : ZAU
+
+Parcelle n°17 :
+Type : ZU
+Polygone : Polygone : [0;30] [60;100] [0;100] 
+Propriétaire : Martin
+Surface : 2100
+Surface construite : 632
+Surface à construire restante : -0.0588379
 
