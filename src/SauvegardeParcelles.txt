@@ -1,0 +1,19 @@
+Parcelle n°54 :
+Type : ZN
+Polygone : Polygone : [80;0] [100;0] [100;100] [80;100] 
+Propriétaire : Savard
+Surface : 2000
+
+Parcelle n°56 :
+Type : ZN
+Polygone : Polygone : [80;0] [100;0] [100;100] [80;100] 
+Propriétaire : Savard
+Surface : 2000
+
+Parcelle n°42 :
+Type : ZA
+Polygone : Polygone : [0;0] [80;0] [80;30] [0;30] 
+Propriétaire : Babin
+Surface : 2400
+Type culture : ZAU 25 Robert 16 
+

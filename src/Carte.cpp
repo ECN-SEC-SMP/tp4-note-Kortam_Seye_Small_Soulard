@@ -36,7 +36,6 @@ float Carte::calculerSurfaceTotale() const {
     return surfaceTotale;
 }
 
-/** Lecture des parcelles depuis un fichier */
 void Carte::lireDepuisFichier(const std::string& filename) {
     std::ifstream fichier(filename);
     if (!fichier.is_open()) {
@@ -50,32 +49,46 @@ void Carte::lireDepuisFichier(const std::string& filename) {
         int numero;
         iss >> typeParcelle >> numero >> proprietaire;
 
-        /**  Lecture des points formant la parcelle */
-        std::getline(fichier, ligne);  /** Lire la ligne des points */
-        std::istringstream pointsStream(ligne);
+        /** Lecture des points formant la parcelle */
+        std::getline(fichier, ligne);  // Lire la ligne des points
         std::vector<Point2D<int>> points;
-        int x, y;
-        while (pointsStream >> x >> y) {
-            points.push_back(Point2D<int>(x, y));
+
+        if (!ligne.empty()) {
+            std::istringstream pointsStream(ligne);
+            char ignoreChar;
+            int x, y;
+
+            while (pointsStream >> ignoreChar >> x >> ignoreChar >> y >> ignoreChar) {
+                points.emplace_back(x, y);
+            }
         }
 
-        Polygone<int> forme(points); /** Créer la forme du polygone */
+        if (points.empty()) {
+            std::cerr << "Aucun point valide lu pour cette parcelle." << std::endl;
+            continue;
+        }
 
-        /** Déterminer le type de la parcelle et la créer */
+        Polygone<int> forme(points);
         Parcelle* parcelle = nullptr;
+
+        /** Lecture des données spécifiques à chaque type de parcelle */
         if (typeParcelle == "ZA") {
-            std::string typeCulture;
-            fichier >> typeCulture;
-            parcelle = new ZA(numero, proprietaire, forme, typeCulture);
+            std::getline(fichier, ligne); // Lire le type de culture
+            parcelle = new ZA(numero, proprietaire, forme, ligne);
+
         } else if (typeParcelle == "ZAU") {
-            int pConstructible;
-            fichier >> pConstructible;
+            std::getline(fichier, ligne); // Lire le pourcentage constructible
+            int pConstructible = std::stoi(ligne);
             parcelle = new ZAU(numero, proprietaire, forme, pConstructible);
+
         } else if (typeParcelle == "ZU") {
+            std::getline(fichier, ligne); // Lire les paramètres
+            std::istringstream paramsStream(ligne);
             int pConstructible;
             float surfaceConstruite;
-            fichier >> pConstructible >> surfaceConstruite;
+            paramsStream >> pConstructible >> surfaceConstruite;
             parcelle = new ZoneUrbaine(numero, proprietaire, forme, pConstructible, surfaceConstruite);
+
         } else if (typeParcelle == "ZN") {
             parcelle = new ZN(numero, proprietaire, forme);
         }
