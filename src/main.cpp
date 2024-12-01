@@ -16,7 +16,7 @@ int main() {
     Carte carte;  
     try {
         /** Charger les données du fichier */
-        carte.lireDepuisFichier("Parcelles.txt"); 
+        carte.lireDepuisFichier("Parcelles_short.txt"); 
 
         /** Afficher la carte chargée */
         carte.afficherCarte();

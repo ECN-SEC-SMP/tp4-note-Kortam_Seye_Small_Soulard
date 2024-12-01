@@ -1,155 +1,19 @@
-Parcelle n°24 :
-Type : ZA
-Polygone : Polygone : 
-Propriétaire : SAMSON
-Surface : 0
-Type culture : ZA
+Parcelle n°54 :
+Type : ZN
+Polygone : Polygone : [80;0] [100;0] [100;100] [80;100] 
+Propriétaire : Savard
+Surface : 2000
 
-Parcelle n°111 :
-Type : ZA
-Polygone : Polygone : 
-Propriétaire : REVIEUX
-Surface : 0
-Type culture : ZA
+Parcelle n°56 :
+Type : ZN
+Polygone : Polygone : [80;0] [100;0] [100;100] [80;100] 
+Propriétaire : Savard
+Surface : 2000
 
-Parcelle n°134 :
+Parcelle n°42 :
 Type : ZA
-Polygone : Polygone : 
-Propriétaire : MANAC'H
-Surface : 0
-Type culture : ZA
-
-Parcelle n°153 :
-Type : ZA
-Polygone : Polygone : 
-Propriétaire : LEPOT
-Surface : 0
-Type culture : ZA
-
-Parcelle n°211 :
-Type : ZA
-Polygone : Polygone : 
-Propriétaire : REVIEUX
-Surface : 0
-Type culture : ZA
-
-Parcelle n°261 :
-Type : ZA
-Polygone : Polygone : 
-Propriétaire : LEPOT
-Surface : 0
-Type culture : ZA
-
-Parcelle n°287 :
-Type : ZA
-Polygone : Polygone : 
-Propriétaire : MANAC'H
-Surface : 0
-Type culture : ZA
-
-Parcelle n°300 :
-Type : ZA
-Polygone : Polygone : 
-Propriétaire : REVIEUX
-Surface : 0
-Type culture : ZA
-
-Parcelle n°303 :
-Type : ZA
-Polygone : Polygone : 
-Propriétaire : MANAC'H
-Surface : 0
-Type culture : ZA
-
-Parcelle n°314 :
-Type : ZA
-Polygone : Polygone : 
-Propriétaire : REVIEUX
-Surface : 0
-Type culture : ZA
-
-Parcelle n°320 :
-Type : ZA
-Polygone : Polygone : 
-Propriétaire : MANAC'H
-Surface : 0
-Type culture : ZA
-
-Parcelle n°333 :
-Type : ZA
-Polygone : Polygone : 
-Propriétaire : DUPUIS
-Surface : 0
-Type culture : ZA
-
-Parcelle n°342 :
-Type : ZA
-Polygone : Polygone : 
-Propriétaire : AMPLOI
-Surface : 0
-Type culture : ZA
-
-Parcelle n°345 :
-Type : ZA
-Polygone : Polygone : 
-Propriétaire : DUPUIS
-Surface : 0
-Type culture : ZA
-
-Parcelle n°424 :
-Type : ZA
-Polygone : Polygone : 
-Propriétaire : SAMSON
-Surface : 0
-Type culture : ZA
-
-Parcelle n°443 :
-Type : ZA
-Polygone : Polygone : 
-Propriétaire : DUPUIS
-Surface : 0
-Type culture : ZA
-
-Parcelle n°491 :
-Type : ZA
-Polygone : Polygone : 
-Propriétaire : REVIEUX
-Surface : 0
-Type culture : ZA
-
-Parcelle n°512 :
-Type : ZA
-Polygone : Polygone : 
-Propriétaire : PAUL
-Surface : 0
-Type culture : ZA
-
-Parcelle n°655 :
-Type : ZA
-Polygone : Polygone : 
-Propriétaire : LEPOT
-Surface : 0
-Type culture : ZA
-
-Parcelle n°768 :
-Type : ZA
-Polygone : Polygone : 
-Propriétaire : ROUGE
-Surface : 0
-Type culture : ZA
-
-Parcelle n°872 :
-Type : ZA
-Polygone : Polygone : 
-Propriétaire : SAMSON
-Surface : 0
-Type culture : ZAU
-
-Parcelle n°1 :
-Type : ZU
-Polygone : Polygone : 
-Propriétaire : DUPUIS
-Surface : 0
-Surface construite : 0
-Surface à construire restante : 0
+Polygone : Polygone : [0;0] [80;0] [80;30] [0;30] 
+Propriétaire : Babin
+Surface : 2400
+Type culture : ZAU 25 Robert 16 
 
